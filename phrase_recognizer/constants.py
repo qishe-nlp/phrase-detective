@@ -29,7 +29,6 @@ PP_ES = [
   [{"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADJ", "OP": "?"}],
   [{"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "PROPN"}],
   [{"POS": "ADP"}, {"POS": "PRON"}],
-  [{"POS": "ADP"}, {"POS": "ADV"}],
 ]
 
 PP_PATTERNS = {
