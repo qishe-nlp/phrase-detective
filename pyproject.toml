@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "phrase-recognizer"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Phoenix Grey <phoenix.grey0108@gmail.com>"]
 

@@ -9,7 +9,7 @@ class VerbKnowledgeRecognizer(object):
   The values are stored in doc._.noun_phrases 
   """
 
-  name = "noun_phrases"
+  name = "verb_knowledge_phrases"
 
   def __init__(self, nlp):
     """
