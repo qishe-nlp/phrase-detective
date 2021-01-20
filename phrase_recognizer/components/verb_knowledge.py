@@ -80,13 +80,15 @@ class VerbKnowledgeRecognizer(object):
   def _get_en_verb_phrases(self, doc):
     verb_phrases = []
     for v in doc._.verbs:
-      vp = {"verb": v.lemma_} 
+      vp = {"lemma": v.lemma_, "complete verb": v.text, "direct object": [], "indirect object": []} 
       for obj in v.children:
+        if obj.i == v.i - 1 and obj.dep_ == "aux" and v.text != v.lemma_ :
+          vp["complete verb"] = " ".join([t.text for t in obj.subtree]) + " " + v.text 
         if obj.dep_ == "dobj":
-          vp["direct object"] = " ".join([t.text for t in obj.subtree])
+          vp["direct object"].append(" ".join([t.text for t in obj.subtree]))
         if obj.dep_ == "dative":
-          vp["indirect object"] = " ".join([t.text for t in obj.subtree])
-      if "direct object" in vp.keys() or "indirect object" in vp.keys():
+          vp["indirect object"].append(" ".join([t.text for t in obj.subtree]))
+      if len(vp["direct object"]) > 0 or len(vp["indirect object"]) > 0:
         verb_phrases.append(vp)
 
     doc._.verb_phrases = verb_phrases
