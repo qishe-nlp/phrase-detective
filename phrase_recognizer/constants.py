@@ -6,9 +6,9 @@ NP_EN = [
 
 NP_ES = [
   [{"POS": "DET", "OP": "+"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}],
-  [{"POS": "DET"}, {"POS": "NOUN"}, {"POS": "ADV", "OP": "?"}, {"POS": "ADJ", "OP": "?"}],
+  [{"POS": "DET"}, {"POS": "NOUN"}, {"POS": "ADV", "OP": "?"}, {"POS": "ADJ"}],
   [{"POS": "NOUN"}, {"POS": "ADJ"}],
-  [{"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NUM"}, {"POS": "NOUN"}],
+  [{"POS": "DET", "OP": "?"}, {"POS": "NUM"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}],
 ]
 
 NP_PATTERNS = {
