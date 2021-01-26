@@ -43,7 +43,6 @@ class VerbKnowledgeRecognizer(object):
 
    
   def __del__(self):
-    print("vkb is dead")
     Doc.remove_extension("verbs")
     Doc.remove_extension("passive_phrases")
     Doc.remove_extension("verb_phrases")

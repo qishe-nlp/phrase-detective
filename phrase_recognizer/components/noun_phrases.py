@@ -41,5 +41,4 @@ class NounPhraseRecognizer(object):
     return doc
 
   def __del__(self):
-    print("noun phrase is dead")
     Doc.remove_extension("noun_phrases")

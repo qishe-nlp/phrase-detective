@@ -42,5 +42,4 @@ class PrepPhraseRecognizer(object):
     return doc
 
   def __del__(self):
-    print("prep phrase is dead")
     Doc.remove_extension("prep_phrases")
