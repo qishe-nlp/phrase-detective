@@ -20,7 +20,7 @@ def analyze(lang, sentence):
 
   doc = nlp(sentence)
   for t in doc:
-    #print("text: {}, pos: {}, tag: {}, form: {}, lemma: {}, dep: {}, head: {}". format(t.text, t.pos_, t.tag_, spacy.explain(t.tag_), t.lemma_, t.dep_, t.head.text))
+    print("text: {}, pos: {}, tag: {}, form: {}, lemma: {}, dep: {}, head: {}". format(t.text, t.pos_, t.tag_, spacy.explain(t.tag_), t.lemma_, t.dep_, t.head.text))
     left_tree = [e for e in t.lefts]
     right_tree = [e for e in t.rights]
 

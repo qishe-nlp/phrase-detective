@@ -39,3 +39,7 @@ class NounPhraseRecognizer(object):
       phrases.append(np)
     doc._.noun_phrases = phrases
     return doc
+
+  def __del__(self):
+    print("noun phrase is dead")
+    Doc.remove_extension("noun_phrases")

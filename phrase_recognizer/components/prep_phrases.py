@@ -40,3 +40,7 @@ class PrepPhraseRecognizer(object):
         phrases.append(pp)
     doc._.prep_phrases = phrases
     return doc
+
+  def __del__(self):
+    print("prep phrase is dead")
+    Doc.remove_extension("prep_phrases")

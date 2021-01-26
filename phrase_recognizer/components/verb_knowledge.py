@@ -42,6 +42,13 @@ class VerbKnowledgeRecognizer(object):
     }
 
    
+  def __del__(self):
+    print("vkb is dead")
+    Doc.remove_extension("verbs")
+    Doc.remove_extension("passive_phrases")
+    Doc.remove_extension("verb_phrases")
+
+
   def __call__(self, doc):
     """
     Apply the pipeline component on a Doc object and modify it if matches are found.
