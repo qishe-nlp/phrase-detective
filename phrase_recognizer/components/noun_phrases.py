@@ -1,34 +1,39 @@
+# -*- coding: utf-8 -*-
 from spacy.matcher import Matcher
 from spacy.tokens import Doc, Span
-from phrase_recognizer.constants import NP_PATTERNS
 from phrase_recognizer.lib import merge
+from phrase_recognizer.regx import REGX
 
-class NounPhraseRecognizer(object):
-  """
-  Customerized component to detect noun phrases in doc.
-  The values are stored in doc._.noun_phrases 
-  """
 
-  name = "noun_phrases"
+class NounPhraseRecognizer:
+  """Customerized component to detect noun phrases in ``spacy.tokens.Doc`` object. The ``NP`` values are stored in ``doc._.noun_phrases``,
+
+  Attributes:
+    ext_name (str): customized extension field name
+    matcher (spacy.mathcer.Matcher): Rule maker for detecting ``NP``
+  """
 
   def __init__(self, nlp):
-    """
-    Initialize the pipeline component. The shared nlp instance is used to
-    initialize the matcher, which detects POS
-    """
-
-    self.matcher = Matcher(nlp.vocab)
-    patterns = NP_PATTERNS[nlp.meta["lang"]]
-    self.matcher.add("NP", None, *patterns)
-
-    Doc.set_extension("noun_phrases", default=[])
+    """Initialize the pipeline component. The shared nlp instance is used to initialize the matcher.
     
+    Args:
+      nlp (spacy.Language): language environment
+    """
+
+    self.ext_name = "noun_phrases"
+    self.matcher = Matcher(nlp.vocab)
+    np_patterns = REGX[nlp.meta["lang"]]["np"]
+    self.matcher.add("NP", np_patterns)
+
+    Doc.set_extension(self.ext_name, default=[])
 
   def __call__(self, doc):
+    """Apply the pipeline component on a ``Doc`` object and modify it if matches are found.
+
+    Returns:
+      Doc: with customized extension ``doc._.noun_phrases``
     """
-    Apply the pipeline component on a Doc object and modify it if matches are found.
-    Return the Doc, so it can be processed by the next component in the pipeline, if available.
-    """
+
     matches = self.matcher(doc)
 
     phrases = []
@@ -41,4 +46,8 @@ class NounPhraseRecognizer(object):
     return doc
 
   def __del__(self):
-    Doc.remove_extension("noun_phrases")
+    """Remove customized extension ``doc._.noun_phrases``
+    """
+
+    Doc.remove_extension(self.ext_name)
+

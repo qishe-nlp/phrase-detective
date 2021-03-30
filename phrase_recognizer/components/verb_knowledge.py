@@ -1,33 +1,36 @@
+# -*- coding: utf-8 -*-
 from spacy.matcher import Matcher
 from spacy.tokens import Doc, Span, Token
-from phrase_recognizer.constants import VERB_PATTERNS, PASSIVE_PATTERNS
 from phrase_recognizer.lib import merge
+from phrase_recognizer.regx import REGX
+from phrase_recognizer.rules import RULES
 
-class VerbKnowledgeRecognizer(object):
-  """
-  Customerized component to detect noun phrases in doc.
-  The values are stored in doc._.noun_phrases 
-  """
+class VerbKnowledgeRecognizer:
+  """Customerized component to detect verb knowledge in ``spacy.tokens.Doc`` object. The corresponding values are stored in ``doc._.verbs``, ``doc._.passive_phrases``, and ``doc._.verb_phrases``.
 
-  name = "verb_knowledge_phrases"
+  Attributes:
+    ext_name (str): customized extension field name
+    matcher (spacy.mathcer.Matcher): Rule maker for detecting ``VERB`` and ``PASSIVE``
+  """
 
   def __init__(self, nlp):
-    """
-    Initialize the pipeline component. The shared nlp instance is used to
-    initialize the matcher, which detects POS
+    """Initialize the pipeline component. The shared nlp instance is used to initialize the matcher.
+    
+    Args:
+      nlp (spacy.Language): language environment
     """
 
     self.nlp = nlp
     self.matcher = Matcher(nlp.vocab)
 
-    # TODO: 
     lang = nlp.meta["lang"]
-    verb_patterns = VERB_PATTERNS[lang]
-    passive_phrase_patterns = PASSIVE_PATTERNS[lang]
+    patterns = REGX[lang] 
+    verb_patterns = patterns["verb"]
+    passive_phrase_patterns = patterns["verb_passive"]
+    self.rules = RULES[lang]
 
-
-    self.matcher.add("VERB", None, *verb_patterns)
-    self.matcher.add("PASSIVE", None, *passive_phrase_patterns)
+    self.matcher.add("VERB", verb_patterns)
+    self.matcher.add("PASSIVE", passive_phrase_patterns)
 
     Doc.set_extension("verbs", default=[])
     Doc.set_extension("passive_phrases", default=[])
@@ -40,18 +43,21 @@ class VerbKnowledgeRecognizer(object):
       "VERB": [],
       "PASSIVE": [],
     }
-
    
   def __del__(self):
+    """Remove customized extensions ``doc._.verb_phrases``, ``doc._.verbs`` and ``doc._.passive_phrases``
+    """
+
     Doc.remove_extension("verbs")
     Doc.remove_extension("passive_phrases")
     Doc.remove_extension("verb_phrases")
 
 
   def __call__(self, doc):
-    """
-    Apply the pipeline component on a Doc object and modify it if matches are found.
-    Return the Doc, so it can be processed by the next component in the pipeline, if available.
+    """Apply the pipeline component on a Doc object and modify it if matches are found.
+
+    Returns:
+      Doc: with customized extensions ``doc._.verb_phrases``, ``doc._.passive_phrases``, `doc._.verbs` 
     """
     matches = self.matcher(doc)
 
@@ -59,15 +65,15 @@ class VerbKnowledgeRecognizer(object):
       match_name = self.nlp.vocab.strings[match_id]
       self.match_store[match_name].append((start, end))
 
-    self.get_verbs(doc, self.match_store["VERB"])
-    self.get_passive_phrases(doc, self.match_store["PASSIVE"])
-    self.get_verb_phrases(doc)
+    self._get_verbs(doc, self.match_store["VERB"])
+    self._get_passive_phrases(doc, self.match_store["PASSIVE"])
+    self._get_verb_phrases(doc)
 
     self._reset_matchstore()
 
     return doc
 
-  def get_verbs(self, doc, matches):
+  def _get_verbs(self, doc, matches):
     verbs = []
     refined_matches = merge(matches)
     for start, _ in refined_matches:
@@ -75,7 +81,7 @@ class VerbKnowledgeRecognizer(object):
       verbs.append(v)
     doc._.verbs = verbs 
 
-  def get_passive_phrases(self, doc, matches):
+  def _get_passive_phrases(self, doc, matches):
     passive_phrases = []
     refined_matches = merge(matches)
     for start, end in refined_matches:
@@ -83,44 +89,6 @@ class VerbKnowledgeRecognizer(object):
       passive_phrases.append(p)
     doc._.passive_phrases = passive_phrases 
 
-  def _get_en_verb_phrases(self, doc):
-    verb_phrases = []
-    for v in doc._.verbs:
-      vp = {"lemma": v.lemma_, "complete verb": v.text, "direct object": [], "indirect object": []} 
-      for obj in v.children:
-        if obj.i == v.i - 1 and obj.dep_ == "aux" and v.text != v.lemma_ :
-          vp["complete verb"] = " ".join([t.text for t in obj.subtree]) + " " + v.text 
-        if obj.dep_ == "dobj":
-          vp["direct object"].append(" ".join([t.text for t in obj.subtree]))
-        if obj.dep_ == "dative":
-          vp["indirect object"].append(" ".join([t.text for t in obj.subtree]))
-      if len(vp["direct object"]) > 0 or len(vp["indirect object"]) > 0:
-        verb_phrases.append(vp)
-
-    doc._.verb_phrases = verb_phrases
-
-  def _get_es_verb_phrases(self, doc):
-    verb_phrases = []
-    for v in doc._.verbs:
-      vp = {"lemma": v.lemma_, "complete verb": v.text, "direct object": [], "indirect object": []} 
-      for obj in v.children:
-        if obj.i == v.i - 1 and obj.dep_ == "aux" and v.text != v.lemma_ :
-          vp["complete verb"] = " ".join([t.text for t in obj.subtree]) + " " + v.text 
-        if obj.dep_ == "obj":
-          vp["direct object"].append(" ".join([t.text for t in obj.subtree]))
-        if obj.dep_ == "iobj":
-          vp["indirect object"].append(" ".join([t.text for t in obj.subtree]))
-      if len(vp["direct object"]) > 0 or len(vp["indirect object"]) > 0:
-        verb_phrases.append(vp)
-
-    doc._.verb_phrases = verb_phrases
- 
-  def get_verb_phrases(self, doc):
-    lang = self.nlp.meta["lang"]
-    if lang == "en":
-      self._get_en_verb_phrases(doc)
-    elif lang == "es":
-      self._get_es_verb_phrases(doc)
-
-         
+  def _get_verb_phrases(self, doc):
+    doc._.verb_phrases = self.rules["vp"](doc)
 
