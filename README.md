@@ -10,62 +10,62 @@ python -m spacy download es_dep_news_trf
 
 ### Detect noun phrases 
 ```
-  import spacy
-  from spacy import Language
-  from phrase_recognizer import NounPhraseRecognizer, PKG_INDICES
+import spacy
+from spacy import Language
+from phrase_recognizer import NounPhraseRecognizer, PKG_INDICES
 
-  @Language.factory("nprecog")
-  def create_np_parser(nlp: Language, name: str):
-    return NounPhraseRecognizer(nlp) 
+@Language.factory("nprecog")
+def create_np_parser(nlp: Language, name: str):
+  return NounPhraseRecognizer(nlp) 
 
-  def noun_phrase(lang, sentence):
-    nlp = spacy.load(PKG_INDICES[lang])
-    nlp.add_pipe("nprecog")
-    doc = nlp(sentence)
-    for np in doc._.noun_phrases:
-      print(np.text)
+def noun_phrase(lang, sentence):
+  nlp = spacy.load(PKG_INDICES[lang])
+  nlp.add_pipe("nprecog")
+  doc = nlp(sentence)
+  for np in doc._.noun_phrases:
+    print(np.text)
 
 ```
 ### Detect preposition phrases 
 
 ```
-  import spacy
-  from spacy import Language
-  from phrase_recognizer import PrepPhraseRecognizer, PKG_INDICES
+import spacy
+from spacy import Language
+from phrase_recognizer import PrepPhraseRecognizer, PKG_INDICES
 
-  @Language.factory("pprecog")
-  def create_pp_parser(nlp: Language, name: str):
-    return PrepPhraseRecognizer(nlp) 
+@Language.factory("pprecog")
+def create_pp_parser(nlp: Language, name: str):
+  return PrepPhraseRecognizer(nlp) 
 
-  def prep_phrase(lang, sentence):
-    nlp = spacy.load(PKG_INDICES[lang])
-    nlp.add_pipe("pprecog")
-    doc = nlp(sentence)
-    for np in doc._.prep_phrases:
-      print(np.text)
+def prep_phrase(lang, sentence):
+  nlp = spacy.load(PKG_INDICES[lang])
+  nlp.add_pipe("pprecog")
+  doc = nlp(sentence)
+  for np in doc._.prep_phrases:
+    print(np.text)
 ```
 
 ### Detect verb phrases 
 
 ```
-  import spacy
-  from spacy import Language
-  from phrase_recognizer import VerbKnowledgeRecognizer, PKG_INDICES
+import spacy
+from spacy import Language
+from phrase_recognizer import VerbKnowledgeRecognizer, PKG_INDICES
 
-  @Language.factory("vkbrecog")
-  def create_vkb_parser(nlp: Language, name: str):
-    return VerbKnowledgeRecognizer(nlp) 
+@Language.factory("vkbrecog")
+def create_vkb_parser(nlp: Language, name: str):
+  return VerbKnowledgeRecognizer(nlp) 
 
-  def verb_knowledge(lang, sentence):
-    nlp = spacy.load(PKG_INDICES[lang])
-    nlp.add_pipe("vkbrecog")
-    doc = nlp(sentence)
-    for v in doc._.verbs:
-      print("TEXT: {}, TAG: {}, FORM: {}, ORIGNAL: {}".format(v.text, v.tag_, spacy.explain(v.tag_), v.lemma_))
-    for pp in doc._.passive_phrases:
-      print(pp.text)
-    for vp in doc._.verb_phrases:
-      print(vp)
+def verb_knowledge(lang, sentence):
+  nlp = spacy.load(PKG_INDICES[lang])
+  nlp.add_pipe("vkbrecog")
+  doc = nlp(sentence)
+  for v in doc._.verbs:
+    print("TEXT: {}, TAG: {}, FORM: {}, ORIGNAL: {}".format(v.text, v.tag_, spacy.explain(v.tag_), v.lemma_))
+  for pp in doc._.passive_phrases:
+    print(pp.text)
+  for vp in doc._.verb_phrases:
+    print(vp)
 ```
 
 # Development
