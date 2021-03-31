@@ -91,7 +91,7 @@ which run tests under `tests/*`
 ### Create sphix docs
 ```
 poetry shell
-cd docs
+cd apidocs
 sphinx-apidoc -f -o source ../phrase_recognizer
 make html
 python -m http.server -d build/html
