@@ -8,6 +8,8 @@ python -m spacy download es_dep_news_trf
 
 # Usage
 
+Please refer to [api docs](https://qishe-nlp.github.io/phrase-recognizer/)
+
 ### Detect noun phrases 
 ```
 import spacy
@@ -97,9 +99,16 @@ make html
 python -m http.server -d build/html
 ```
 
+### Hose docs on github pages
+```
+cp -rf apidocs/build/html/* docs/
+```
+
 ### Build
 * Change `version` in `pyproject.toml` and `phrase_recognizer/__init__.py`
 * Build python package by `poetry build`
+
+### Git commit and push
 
 ### Publish
 * Set pypi test environment variables in poetry, refer to [poetry doc](https://python-poetry.org/docs/repositories/)
