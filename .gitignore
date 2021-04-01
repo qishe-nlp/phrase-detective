@@ -3,3 +3,4 @@ __pycache__
 *.csv
 dist
 *.json
+apidocs/build

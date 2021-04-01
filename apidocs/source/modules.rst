@@ -1,7 +1,7 @@
-phrase_recognizer
-=================
+phrase_detective
+================
 
 .. toctree::
    :maxdepth: 4
 
-   phrase_recognizer
+   phrase_detective

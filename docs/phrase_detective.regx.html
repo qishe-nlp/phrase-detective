@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Search &mdash; phrase-detective 0.0.1 documentation</title>
+  <title>phrase_detective.regx package &mdash; phrase-detective 0.0.1 documentation</title>
   
 
   
@@ -23,7 +23,6 @@
   
 
   
-    
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -37,10 +36,8 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-    <script type="text/javascript" src="_static/searchtools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -67,7 +64,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -85,11 +82,17 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">phrase_detective</a></li>
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">phrase_detective.regx package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-phrase_detective.regx.en">phrase_detective.regx.en module</a></li>
+<li><a class="reference internal" href="#module-phrase_detective.regx.es">phrase_detective.regx.es module</a></li>
+<li><a class="reference internal" href="#module-phrase_detective.regx">Module contents</a></li>
 </ul>
-
+</li>
+</ul>
+</div>
             
           
         </div>
@@ -136,10 +139,14 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Search</li>
+      <li>phrase_detective.regx package</li>
     
     
       <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/phrase_detective.regx.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -151,18 +158,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="phrase-detective-regx-package">
+<h1>phrase_detective.regx package<a class="headerlink" href="#phrase-detective-regx-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-phrase_detective.regx.en">
+<span id="phrase-detective-regx-en-module"></span><h2>phrase_detective.regx.en module<a class="headerlink" href="#module-phrase_detective.regx.en" title="Permalink to this headline">¶</a></h2>
+<p>Define regular expression usage of <code class="docutils literal notranslate"><span class="pre">spacy.matcher.Matcher</span></code> for <code class="docutils literal notranslate"><span class="pre">English</span></code></p>
+</div>
+<div class="section" id="module-phrase_detective.regx.es">
+<span id="phrase-detective-regx-es-module"></span><h2>phrase_detective.regx.es module<a class="headerlink" href="#module-phrase_detective.regx.es" title="Permalink to this headline">¶</a></h2>
+<p>Define regular expression usage of <code class="docutils literal notranslate"><span class="pre">spacy.matcher.Matcher</span></code> for <code class="docutils literal notranslate"><span class="pre">Spanish</span></code></p>
+</div>
+<div class="section" id="module-phrase_detective.regx">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-phrase_detective.regx" title="Permalink to this headline">¶</a></h2>
+<p>Regular Expression used to analyze phrases</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">phrase_detective.regx</span> <span class="kn">import</span> <span class="n">REGX</span>
 
-  
-  <div id="search-results">
-  
-  </div>
+<span class="nb">print</span><span class="p">(</span><span class="n">REGX</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
 
            </div>
            
@@ -204,14 +223,7 @@
   
   
     
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>

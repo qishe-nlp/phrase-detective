@@ -1,21 +1,21 @@
-phrase\_recognizer.regx package
+phrase\_detective.rules package
 ===============================
 
 Submodules
 ----------
 
-phrase\_recognizer.regx.en module
+phrase\_detective.rules.en module
 ---------------------------------
 
-.. automodule:: phrase_recognizer.regx.en
+.. automodule:: phrase_detective.rules.en
    :members:
    :undoc-members:
    :show-inheritance:
 
-phrase\_recognizer.regx.es module
+phrase\_detective.rules.es module
 ---------------------------------
 
-.. automodule:: phrase_recognizer.regx.es
+.. automodule:: phrase_detective.rules.es
    :members:
    :undoc-members:
    :show-inheritance:
@@ -23,7 +23,7 @@ phrase\_recognizer.regx.es module
 Module contents
 ---------------
 
-.. automodule:: phrase_recognizer.regx
+.. automodule:: phrase_detective.rules
    :members:
    :undoc-members:
    :show-inheritance:

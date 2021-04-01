@@ -1,20 +1,20 @@
 # Installation from pip3
 
 ```shell
-pip3 install --verbose phrase_recognizer 
+pip3 install --verbose phrase_detective 
 python -m spacy download en_core_web_trf
 python -m spacy download es_dep_news_trf
 ```
 
 # Usage
 
-Please refer to [api docs](https://qishe-nlp.github.io/phrase-recognizer/)
+Please refer to [api docs](https://qishe-nlp.github.io/phrase-detective/)
 
 ### Detect noun phrases 
 ```
 import spacy
 from spacy import Language
-from phrase_recognizer import NounPhraseRecognizer, PKG_INDICES
+from phrase_detective import NounPhraseRecognizer, PKG_INDICES
 
 @Language.factory("nprecog")
 def create_np_parser(nlp: Language, name: str):
@@ -33,7 +33,7 @@ def noun_phrase(lang, sentence):
 ```
 import spacy
 from spacy import Language
-from phrase_recognizer import PrepPhraseRecognizer, PKG_INDICES
+from phrase_detective import PrepPhraseRecognizer, PKG_INDICES
 
 @Language.factory("pprecog")
 def create_pp_parser(nlp: Language, name: str):
@@ -52,7 +52,7 @@ def prep_phrase(lang, sentence):
 ```
 import spacy
 from spacy import Language
-from phrase_recognizer import VerbKnowledgeRecognizer, PKG_INDICES
+from phrase_detective import VerbKnowledgeRecognizer, PKG_INDICES
 
 @Language.factory("vkbrecog")
 def create_vkb_parser(nlp: Language, name: str):
@@ -74,7 +74,7 @@ def verb_knowledge(lang, sentence):
 
 ### Clone project
 ```
-git clone https://github.com/qishe-nlp/phrase-recognizer.git
+git clone https://github.com/qishe-nlp/phrase-detective.git
 ```
 
 ### Install [poetry](https://python-poetry.org/docs/)
@@ -94,7 +94,7 @@ which run tests under `tests/*`
 ```
 poetry shell
 cd apidocs
-sphinx-apidoc -f -o source ../phrase_recognizer
+sphinx-apidoc -f -o source ../phrase_detective
 make html
 python -m http.server -d build/html
 ```
@@ -105,7 +105,7 @@ cp -rf apidocs/build/html/* docs/
 ```
 
 ### Build
-* Change `version` in `pyproject.toml` and `phrase_recognizer/__init__.py`
+* Change `version` in `pyproject.toml` and `phrase_detective/__init__.py`
 * Build python package by `poetry build`
 
 ### Git commit and push
@@ -123,5 +123,5 @@ git tag [x.x.x]
 git push origin master
 ```
 
-* Manually publish to [pypi repo](https://pypi.org/) through [github action](https://github.com/qishe-nlp/phrase-recognizer/actions/workflows/pypi.yml)
+* Manually publish to [pypi repo](https://pypi.org/) through [github action](https://github.com/qishe-nlp/phrase-detective/actions/workflows/pypi.yml)
 
