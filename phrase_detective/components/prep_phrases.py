@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from spacy.matcher import Matcher
 from spacy.tokens import Doc, Span
-from phrase_recognizer.lib import merge
-from phrase_recognizer.regx import REGX
+from phrase_detective.lib import merge
+from phrase_detective.regx import REGX
 
 
 class PrepPhraseRecognizer:

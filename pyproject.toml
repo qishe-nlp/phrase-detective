@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "phrase-recognizer"
+name = "phrase-detective"
 version = "0.1.8"
-description = "Phrase recognizer for spacy pipeline"
+description = "Phrase recognizer component for spacy pipeline"
 authors = ["Phoenix Grey <phoenix.grey0108@gmail.com>"]
-documentation = "https://qishe-nlp.github.io/phrase-recognizer/"
-repository = "https://github.com/qishe-nlp/phrase-recognizer"
+documentation = "https://qishe-nlp.github.io/phrase-detective/"
+repository = "https://github.com/qishe-nlp/phrase-detective"
 keywords = ["phrase detection", "NLP", "spacy"]
 readme = "README.md"
 

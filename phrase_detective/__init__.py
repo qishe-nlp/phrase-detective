@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""``phrase_recognizer`` Package
+"""``phrase_detective`` Package
 
 Components for ``spacy`` pipeline, to detect noun phrase, prep phrase, verb related knowledge
 
@@ -9,7 +9,7 @@ Components for ``spacy`` pipeline, to detect noun phrase, prep phrase, verb rela
     
     $ pip3 install --index-url https://test.pypi.org/simple/ \\
       --extra-index-url https://pypi.org/simple \\
-      --verbose phrase_recognizer
+      --verbose phrase_detective
 
 .. topic:: Example: Detect noun phrases 
 
@@ -17,7 +17,7 @@ Components for ``spacy`` pipeline, to detect noun phrase, prep phrase, verb rela
 
     import spacy
     from spacy import Language
-    from phrase_recognizer import NounPhraseRecognizer, PKG_INDICES
+    from phrase_detective import NounPhraseRecognizer, PKG_INDICES
 
     @Language.factory("nprecog")
     def create_np_parser(nlp: Language, name: str):
@@ -36,7 +36,7 @@ Components for ``spacy`` pipeline, to detect noun phrase, prep phrase, verb rela
 
     import spacy
     from spacy import Language
-    from phrase_recognizer import PrepPhraseRecognizer, PKG_INDICES
+    from phrase_detective import PrepPhraseRecognizer, PKG_INDICES
 
     @Language.factory("pprecog")
     def create_pp_parser(nlp: Language, name: str):
@@ -55,7 +55,7 @@ Components for ``spacy`` pipeline, to detect noun phrase, prep phrase, verb rela
 
     import spacy
     from spacy import Language
-    from phrase_recognizer import VerbKnowledgeRecognizer, PKG_INDICES
+    from phrase_detective import VerbKnowledgeRecognizer, PKG_INDICES
 
     @Language.factory("vkbrecog")
     def create_vkb_parser(nlp: Language, name: str):

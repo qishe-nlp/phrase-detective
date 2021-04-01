@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from spacy.matcher import Matcher
 from spacy.tokens import Doc, Span, Token
-from phrase_recognizer.lib import merge
-from phrase_recognizer.regx import REGX
-from phrase_recognizer.rules import RULES
+from phrase_detective.lib import merge
+from phrase_detective.regx import REGX
+from phrase_detective.rules import RULES
 
 class VerbKnowledgeRecognizer:
   """Customerized component to detect verb knowledge in ``spacy.tokens.Doc`` object. The corresponding values are stored in ``doc._.verbs``, ``doc._.passive_phrases``, and ``doc._.verb_phrases``.

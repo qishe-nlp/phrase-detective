@@ -1,6 +1,6 @@
 from spacy.language import Language
-from phrase_recognizer import NounPhraseRecognizer, PrepPhraseRecognizer, VerbKnowledgeRecognizer
-from phrase_recognizer import PKG_INDICES
+from phrase_detective import NounPhraseRecognizer, PrepPhraseRecognizer, VerbKnowledgeRecognizer
+from phrase_detective import PKG_INDICES
 import spacy
 
 @Language.factory("nprecog")

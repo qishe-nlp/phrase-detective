@@ -1,4 +1,4 @@
-from phrase_recognizer.lib import merge_range, merge
+from phrase_detective.lib import merge_range, merge
 
 def test_merge_range():
   r = merge_range((1, 3), (4, 8))

@@ -28,5 +28,5 @@ jobs:
         uses: JRubics/poetry-publish@v1.5
         with:
           pypi_token: ${{ secrets.TEST_PYPI_TOKEN }}
-          repository_name: 'phrase-recognizer'
+          repository_name: 'phrase-detective'
           repository_url: 'https://test.pypi.org/legacy/'

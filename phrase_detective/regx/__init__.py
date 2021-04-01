@@ -2,7 +2,7 @@
 
 .. code:: python
 
-  from phrase_recognizer.regx import REGX
+  from phrase_detective.regx import REGX
 
   print(REGX)
 """
