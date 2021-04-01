@@ -1,7 +1,7 @@
 # Installation from pip3
 
 ```shell
-pip3 install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple --verbose phrase_recognizer 
+pip3 install --verbose phrase_recognizer 
 python -m spacy download en_core_web_trf
 python -m spacy download es_dep_news_trf
 ```
@@ -110,12 +110,18 @@ cp -rf apidocs/build/html/* docs/
 
 ### Git commit and push
 
-### Publish
+### Publish from local dev env
 * Set pypi test environment variables in poetry, refer to [poetry doc](https://python-poetry.org/docs/repositories/)
 * Publish to pypi test by `poetry publish -r test`
 
-# TODO
+### Publish through CI 
 
-### Github action to publish package
-* pypi test repo
-* pypi repo
+* Github action build and publish package to [test pypi repo](https://test.pypi.org/)
+
+```
+git tag [x.x.x]
+git push origin master
+```
+
+* Manually publish to [pypi repo](https://pypi.org/) through [github action](https://github.com/qishe-nlp/phrase-recognizer/actions/workflows/pypi.yml)
+

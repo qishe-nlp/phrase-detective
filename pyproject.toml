@@ -1,8 +1,12 @@
 [tool.poetry]
 name = "phrase-recognizer"
-version = "0.1.7"
+version = "0.1.8"
 description = "Phrase recognizer for spacy pipeline"
 authors = ["Phoenix Grey <phoenix.grey0108@gmail.com>"]
+documentation = "https://qishe-nlp.github.io/phrase-recognizer/"
+repository = "https://github.com/qishe-nlp/phrase-recognizer"
+keywords = ["phrase detection", "NLP", "spacy"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
