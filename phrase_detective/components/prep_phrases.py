@@ -26,7 +26,8 @@ class PrepPhraseRecognizer:
     pp_patterns = REGX[nlp.meta["lang"]]["pp"]
     self.matcher.add("PP", pp_patterns)
 
-    Doc.set_extension(self.ext_name, default=[])
+    if not Doc.has_extension(self.ext_name):
+      Doc.set_extension(self.ext_name, default=[])
     
 
   def __call__(self, doc):
@@ -51,5 +52,5 @@ class PrepPhraseRecognizer:
   def __del__(self):
     """Remove customized extension ``doc._.prep_phrases``
     """
-
-    Doc.remove_extension(self.ext_name)
+    if Doc.has_extension(self.ext_name):
+      Doc.remove_extension(self.ext_name)

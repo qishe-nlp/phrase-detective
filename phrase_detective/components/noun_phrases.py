@@ -25,7 +25,8 @@ class NounPhraseRecognizer:
     np_patterns = REGX[nlp.meta["lang"]]["np"]
     self.matcher.add("NP", np_patterns)
 
-    Doc.set_extension(self.ext_name, default=[])
+    if not Doc.has_extension(self.ext_name):
+      Doc.set_extension(self.ext_name, default=[])
 
   def __call__(self, doc):
     """Apply the pipeline component on a ``Doc`` object and modify it if matches are found.
@@ -48,6 +49,6 @@ class NounPhraseRecognizer:
   def __del__(self):
     """Remove customized extension ``doc._.noun_phrases``
     """
-
-    Doc.remove_extension(self.ext_name)
+    if Doc.has_extension(self.ext_name):
+      Doc.remove_extension(self.ext_name)
 

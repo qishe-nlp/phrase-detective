@@ -32,9 +32,12 @@ class VerbKnowledgeRecognizer:
     self.matcher.add("VERB", verb_patterns)
     self.matcher.add("PASSIVE", passive_phrase_patterns)
 
-    Doc.set_extension("verbs", default=[])
-    Doc.set_extension("passive_phrases", default=[])
-    Doc.set_extension("verb_phrases", default=[])
+    if not Doc.has_extension("verbs"):
+      Doc.set_extension("verbs", default=[])
+    if not Doc.has_extension("passive_phrases"):
+      Doc.set_extension("passive_phrases", default=[])
+    if not Doc.has_extension("verb_phrases"):
+      Doc.set_extension("verb_phrases", default=[])
 
     self._reset_matchstore()
 
@@ -47,10 +50,12 @@ class VerbKnowledgeRecognizer:
   def __del__(self):
     """Remove customized extensions ``doc._.verb_phrases``, ``doc._.verbs`` and ``doc._.passive_phrases``
     """
-
-    Doc.remove_extension("verbs")
-    Doc.remove_extension("passive_phrases")
-    Doc.remove_extension("verb_phrases")
+    if Doc.has_extension("verbs"):
+      Doc.remove_extension("verbs")
+    if Doc.has_extension("passive_phrases"):
+      Doc.remove_extension("passive_phrases")
+    if Doc.has_extension("verb_phrases"):
+      Doc.remove_extension("verb_phrases")
 
 
   def __call__(self, doc):
