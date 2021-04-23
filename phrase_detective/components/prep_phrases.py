@@ -49,8 +49,3 @@ class PrepPhraseRecognizer:
     doc._.prep_phrases = phrases
     return doc
 
-  def __del__(self):
-    """Remove customized extension ``doc._.prep_phrases``
-    """
-    if Doc.has_extension(self.ext_name):
-      Doc.remove_extension(self.ext_name)

@@ -46,17 +46,6 @@ class VerbKnowledgeRecognizer:
       "VERB": [],
       "PASSIVE": [],
     }
-   
-  def __del__(self):
-    """Remove customized extensions ``doc._.verb_phrases``, ``doc._.verbs`` and ``doc._.passive_phrases``
-    """
-    if Doc.has_extension("verbs"):
-      Doc.remove_extension("verbs")
-    if Doc.has_extension("passive_phrases"):
-      Doc.remove_extension("passive_phrases")
-    if Doc.has_extension("verb_phrases"):
-      Doc.remove_extension("verb_phrases")
-
 
   def __call__(self, doc):
     """Apply the pipeline component on a Doc object and modify it if matches are found.
