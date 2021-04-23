@@ -46,9 +46,3 @@ class NounPhraseRecognizer:
     doc._.noun_phrases = phrases
     return doc
 
-  def __del__(self):
-    """Remove customized extension ``doc._.noun_phrases``
-    """
-    if Doc.has_extension(self.ext_name):
-      Doc.remove_extension(self.ext_name)
-
