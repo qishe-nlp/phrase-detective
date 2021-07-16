@@ -9,8 +9,10 @@
 
 from .en import en_regx
 from .es import es_regx
+from .de import de_regx
 
 REGX = {
   "en": en_regx,
   "es": es_regx,
+  "de": de_regx,
 }

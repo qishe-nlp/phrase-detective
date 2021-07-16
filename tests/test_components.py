@@ -17,8 +17,8 @@ def create_vkb_parser(nlp: Language, name: str):
 
 
 def test_nprecog():
-  lang = "en"
-  sentence = "Where is the nearest shop ?"
+  lang = "de"
+  sentence = "Wo ist der nächste Supermarkt ?"
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("nprecog")
   doc = nlp(sentence)
@@ -27,12 +27,12 @@ def test_nprecog():
     nps.append(np.text)
   print(nps)
   assert len(nps) == 1
-  assert nps[0] == "the nearest shop"
+  assert nps[0] == "der nächste Supermarkt"
 
 
 def test_pprecog():
-  lang = "en"
-  sentence = "This cat is on the table."
+  lang = "de"
+  sentence = "Diese Katze liegt auf dem Tisch."
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("pprecog")
   doc = nlp(sentence)
@@ -41,11 +41,11 @@ def test_pprecog():
     pps.append(pp.text)
   print(pps)
   assert len(pps) == 1
-  assert pps[0] == "on the table"
+  assert pps[0] == "auf dem Tisch"
 
 def test_vkbrecog():
-  lang = "en"
-  sentence = "This cat is playing on the table."
+  lang = "de"
+  sentence = "Diese Katze spielt auf dem Tisch."
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("vkbrecog")
   doc = nlp(sentence)
