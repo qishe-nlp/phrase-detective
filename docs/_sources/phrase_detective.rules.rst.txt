@@ -4,6 +4,14 @@ phrase\_detective.rules package
 Submodules
 ----------
 
+phrase\_detective.rules.de module
+---------------------------------
+
+.. automodule:: phrase_detective.rules.de
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 phrase\_detective.rules.en module
 ---------------------------------
 

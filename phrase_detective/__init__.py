@@ -7,9 +7,10 @@ Components for ``spacy`` pipeline, to detect noun phrase, prep phrase, verb rela
 
   .. code:: shell
     
-    $ pip3 install --index-url https://test.pypi.org/simple/ \\
-      --extra-index-url https://pypi.org/simple \\
-      --verbose phrase_detective
+    $ pip3 install --verbose phrase_detective
+    $ python -m spacy download en_core_web_trf
+    $ python -m spacy download es_dep_news_trf
+    $ python -m spacy download de_dep_news_trf
 
 .. topic:: Example: Detect noun phrases 
 

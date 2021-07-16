@@ -4,6 +4,7 @@
 pip3 install --verbose phrase_detective 
 python -m spacy download en_core_web_trf
 python -m spacy download es_dep_news_trf
+python -m spacy download de_dep_news_trf
 ```
 
 # Usage

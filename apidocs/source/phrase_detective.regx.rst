@@ -4,6 +4,14 @@ phrase\_detective.regx package
 Submodules
 ----------
 
+phrase\_detective.regx.de module
+--------------------------------
+
+.. automodule:: phrase_detective.regx.de
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 phrase\_detective.regx.en module
 --------------------------------
 

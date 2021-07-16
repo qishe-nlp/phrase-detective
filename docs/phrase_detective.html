@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>phrase_detective package &mdash; phrase-detective 0.1.12 documentation</title>
+  <title>phrase_detective package &mdash; phrase-detective 0.1.13 documentation</title>
   
 
   
@@ -187,6 +187,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="phrase_detective.regx.html">phrase_detective.regx package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.regx.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phrase_detective.regx.html#module-phrase_detective.regx.de">phrase_detective.regx.de module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.regx.html#module-phrase_detective.regx.en">phrase_detective.regx.en module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.regx.html#module-phrase_detective.regx.es">phrase_detective.regx.es module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.regx.html#module-phrase_detective.regx">Module contents</a></li>
@@ -194,6 +195,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="phrase_detective.rules.html">phrase_detective.rules package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.rules.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phrase_detective.rules.html#module-phrase_detective.rules.de">phrase_detective.rules.de module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.rules.html#module-phrase_detective.rules.en">phrase_detective.rules.en module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.rules.html#module-phrase_detective.rules.es">phrase_detective.rules.es module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.rules.html#module-phrase_detective.rules">Module contents</a></li>
@@ -284,9 +286,10 @@
 <p>Components for <code class="docutils literal notranslate"><span class="pre">spacy</span></code> pipeline, to detect noun phrase, prep phrase, verb related knowledge</p>
 <div class="topic">
 <p class="topic-title">Install package</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ pip3 install --index-url https://test.pypi.org/simple/ <span class="se">\</span>
-  --extra-index-url https://pypi.org/simple <span class="se">\</span>
-  --verbose phrase_detective
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ pip3 install --verbose phrase_detective
+$ python -m spacy download en_core_web_trf
+$ python -m spacy download es_dep_news_trf
+$ python -m spacy download de_dep_news_trf
 </pre></div>
 </div>
 </div>
