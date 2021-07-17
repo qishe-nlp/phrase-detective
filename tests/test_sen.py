@@ -42,6 +42,24 @@ def test_sens():
     "Die Mitgliederversammlung werden von einem Mitglied des Vorstandes geleitet.",
     "Wie der Zug vorüber war, wurde er sich erst seiner Angst bewusst."
   ]
+
+  sens = [
+    "Dieser gottverdammte fünfte Budenplatz.",
+    "Also, mein lieber Urban, was haben Sie für mich?",
+    "Wir bauen Münchens Zukunft.",
+    "Jetzt merkst du, was Gottes Hilfe wert ist.",
+    "Das sind Leute vom Luggi.",
+    "Du kennst doch einen Haufen Künstler, und ich würd… fragen…",
+    "Über Mensch und Tier",
+  ]
+
+  sens = [
+    "Also, auf geht's!",
+    "auf geht's!",
+    "2.500 Mark sind geboten. 2.500 zum Ersten.",
+    "Für die wundervolle Fanny.",
+    "Eine Fügung des Schicksals, von mir aus auch das."
+  ]
   sens = []
   lang = "de"
   nlp = spacy.load(PKG_INDICES[lang])

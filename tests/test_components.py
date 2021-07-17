@@ -19,14 +19,24 @@ def create_vkb_parser(nlp: Language, name: str):
 def test_nprecog():
   lang = "de"
   sentence = "Wo ist der nächste Supermarkt ?"
-  #sentence = "Die Komplemente werden in Komplementenklasen eingeteilt."
-  #sentence = "Wir hatten ein sehr schönes Zimmer im Garden Block mit Blick aufs Meer."
-  #sentence = "Seine diesjährige Ernte liefert eine sehr elegante Tasse."
-  #sentence = "Mai ist für alle Menschen der Tag des Widerstands gegen Ausbeutung und Unterdrückung."
-  #sentence = "Wie der Zug vorüber war, wurde er sich erst seiner Angst bewusst."
-  #sentence = "Zwischen Berlin und Neubrandenburg ist der Zug wegen eines Defektes stehen geblieben."
-  #sentence = "Eine Frau in den Siebzigern konnte auf ihrem linken Auge nicht sehen."
-  #sentence = "Sie können Markus Klepper auch gerne anrufen, wenn Sie ganz konkrete Fragen haben."
+
+#  sentence = "Dieser gottverdammte fünfte Budenplatz."
+#  sentence = "und Sie mehr auf der hellen Seite des Mondes,"
+#  sentence = "Die Menschen da… die kommen vom anderen Ende der Welt."
+#  sentence = "Das hatte zehn Hörner und sieben Häupter."
+#  sentence = "Also, mein lieber Urban, was haben Sie für mich?"
+#  sentence = "Der junge Hoflinger hat schwere Kost aufgefahren."
+#  sentence = "Der Hoflinger war ein Sonderfall."
+#  sentence = "Wir bauen Münchens Zukunft."
+#  sentence = "Jetzt merkst du, was Gottes Hilfe wert ist."
+#  sentence = "Ich garantiere für die Sicherheit von Mutter und Jungen."
+#  sentence = "In der Pinakothek hab ich dich nicht gefunden."
+#  sentence = "Du kennst doch einen Haufen Künstler, und ich würd… fragen…"
+#  sentence = "Die erste bayrische Bierburg mit Platz für 6.000 Leut!"
+#  sentence = "Das sind Leute vom Luggi."
+#  sentence = "Dies ist ein Gedicht unseres verehrten Lehrers Nietzsche."
+#  sentence = "Über Mensch und Tier"
+#
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("nprecog")
   doc = nlp(sentence)
@@ -41,14 +51,24 @@ def test_nprecog():
 def test_pprecog():
   lang = "de"
   sentence = "Diese Katze liegt auf dem Tisch."
-  #sentence = "Ziel war es die Partner aus Übersee und die nationale Kirche ins Gespräch zu bringen."
-  #sentence = "Zu Beginn des 19. Jh. wurde die Postkutsche durch Postautos abgelöst."
-  #sentence = "Dabei ist uns auch wichtig, dass sich die Eltern aktiv an der Gestaltung der Schule beteiligen."
-  #sentence = "Die Mitgliederversammlung werden von einem Mitglied des Vorstandes geleitet."
-  #sentence = "Wie können Sie zu Ihm kommen?"
-  #sentence = "Dann wurde ein Nachfolgekurs angeboten und für mich war die Teilnahme daran schon fast selbstverständlich."
-  #sentence = "Dabei handelt es sich um Sendungen bis zu einem Gewicht von drei Kilogramm."
-  #sentence = "Eine Vielzahl an Gebäuden wurde schwer beschädigt und die Bevölkerung ging bis auf die Hälfte zurück."
+
+#  sentence = "und Sie mehr auf der hellen Seite des Mondes."
+#  sentence = "Also, auf geht's!"
+#  sentence = "Die Menschen da… die kommen vom anderen Ende der Welt." 
+#  sentence = "Eine Insel, die zum deutschen Schutzgebiet gehört in der Südsee."
+#  sentence = "Schauen Sie, die Wunde am Kopf Ihres Vaters…"
+#  sentence = "Mit Gottes Hilfe schaffen wir das."
+#  sentence = "Vater hat dir die Steigbügel gehalten. Jetzt hör auf mit dem Scheiß!"
+#  sentence = "2.500 Mark sind geboten. 2.500 zum Ersten."
+#  sentence = "3.000 Mark zum Ersten."
+#  sentence = "Ich garantiere für die Sicherheit von Mutter und Jungen."
+#  sentence = "Ich muss zu Frau und Kind. Hör auf, die Nacht ist jung."
+#  sentence = "In Giesing?"
+#  sentence = "Du hast es mit höheren Mächten zu tun, Maria."
+#  sentence = "Das sind Leute vom Luggi."
+#  sentence = "Für die wundervolle Fanny."
+#  sentence = "Über Mensch und Tier"
+#  sentence = "Eine Fügung des Schicksals, von mir aus auch das."
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("pprecog")
   doc = nlp(sentence)
