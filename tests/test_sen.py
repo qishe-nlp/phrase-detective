@@ -37,6 +37,11 @@ def test_sens():
     "Der Arbeitsausschuss kann über Zuwendungen im Sinne des § 2 der Satzung bis zu einem Betrag von Euro 10.000,00 selbstständig entscheiden."
   ]
 
+  sens = [
+    "Dabei ist uns auch wichtig, dass sich die Eltern aktiv an der Gestaltung der Schule beteiligen.",
+    "Die Mitgliederversammlung werden von einem Mitglied des Vorstandes geleitet.",
+    "Wie der Zug vorüber war, wurde er sich erst seiner Angst bewusst."
+  ]
   sens = []
   lang = "de"
   nlp = spacy.load(PKG_INDICES[lang])

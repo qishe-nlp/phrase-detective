@@ -13,7 +13,7 @@ NP = [
 
 # PP preposition phrase pattern
 PP = [
-  [{"POS": "ADP"}, {"POS": "DET"}, {"POS": "NOUN"}, {"POS": "DET"}, {"POS": "NOUN"}],
+  [{"POS": "ADP"}, {"POS": "DET"}, {"POS": "NOUN"}, {"POS": "DET"}, {"POS": "NOUN", "DEP": "ag"}],
   [{"POS": "ADP"}, {"POS": "DET"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}],
   [{"POS": "ADP"}, {"POS": "ADP"}, {"POS": "DET"}, {"POS": "NOUN"}],
   [{"POS": "ADP"}, {"POS": "NOUN"}],
