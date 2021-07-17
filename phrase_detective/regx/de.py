@@ -3,25 +3,22 @@
 
 # NP noun phrase pattern
 NP = [
-  [{"POS": "ADJ"}, {"POS": "ADV", "OP": "?"}, {"POS": "NOUN"}],
-  [{"POS": "DET"}, {"POS": "ADJ"}, {"POS": "ADV", "OP": "?"}, {"POS": "NOUN"}],
+  [{"POS": "DET"}, {"POS": "NOUN"}, {"POS": "ADP"}, {"POS": "DET"}, {"POS": "NOUN"}],
+  [{"POS": "DET"}, {"POS": "ADV", "OP": "?"}, {"POS": "ADJ"}, {"POS": "NOUN"}],
   [{"POS": "PART"}, {"POS": "DET"}, {"POS": "ADJ"}, {"POS": "NOUN"}],
-  [{"POS": "DET"}, {"POS": "NOUN"}, {"POS": "DET"}, {"POS": "NOUN"}],
-  [{"POS": "DET"}, {"POS": "NOUN"}, {"POS": "ADV"}],
+  [{"POS": "DET"}, {"POS": "NOUN"}, {"POS": "DET"}, {"POS": "NOUN", "DEP": "ag"}],
+  [{"POS": "DET"}, {"POS": "NOUN"}, {"POS": "ADV", "TAG": "ADV", "OP": "?"}],
+  [{"POS": "ADJ"}, {"POS": "NOUN"}],
 ]
 
 # PP preposition phrase pattern
 PP = [
+  [{"POS": "ADP"}, {"POS": "DET"}, {"POS": "NOUN"}, {"POS": "DET"}, {"POS": "NOUN"}],
   [{"POS": "ADP"}, {"POS": "DET"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}],
-  [{"POS": "ADP"}, {"POS": "PROPN"}],
-  [{"POS": "ADP"}, {"POS": "NOUN"}, {"POS": "DET"}, {"POS": "NOUN"}],
-  [{"POS": "ADP"}, {"POS": "PRON"}, {"POS": "PRON"}],
-  [{"POS": "ADP"}, {"POS": "PRON"}, {"POS": "ADP"}, {"POS": "PROPN"}],
-  [{"POS": "ADP"}, {"POS": "PRON"}, {"POS": "ADP"}, {"POS": "PROPN"}],
-  #[{"POS": "ADP"}, {"POS": "PRON"}, {"POS": "ADP"}, {"POS": "DET"}, {"POS": "NOUN"}],
-  [{"POS": "ADP"}, {"POS": "ADV"}],
-  [{"POS": "ADP"}, {"POS": "ADV"}, {"POS": "ADV"}],
   [{"POS": "ADP"}, {"POS": "ADP"}, {"POS": "DET"}, {"POS": "NOUN"}],
+  [{"POS": "ADP"}, {"POS": "NOUN"}],
+  [{"POS": "ADP"}, {"POS": "PRON"}],
+  [{"POS": "ADP"}, {"POS": "ADV"}],
 ]
 
 # TODO: VERB Knowledge pattern
