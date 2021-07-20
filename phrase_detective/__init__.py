@@ -75,7 +75,7 @@ Components for ``spacy`` pipeline, to detect noun phrase, prep phrase, verb rela
 
 """
 
-__version__ = '0.1.16'
+__version__ = '0.1.17'
 
 from .components import NounPhraseRecognizer, PrepPhraseRecognizer, VerbKnowledgeRecognizer
 from .constants import PKG_INDICES

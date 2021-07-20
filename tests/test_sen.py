@@ -60,8 +60,29 @@ def test_sens():
     "Für die wundervolle Fanny.",
     "Eine Fügung des Schicksals, von mir aus auch das."
   ]
+
+  sens = [
+    #"This isn’t anything important.",
+    #"He wanted to get someone reliable to help in this work.",
+    #"People here know each other.",
+    #"It had been fine the day before.",
+
+    #"He is a student of astronomy.",
+    #"Even a small rise in interest rates would hurt borrowers.",
+
+    #"He looked at me from behind the tree.",
+    #"I can't see you until after lunch.",
+
+    #"Just come through here and I ’ll show you where the problem is.",
+    #"Many of these treatments were used until quite recently.",
+
+    #"They left just after six о'clock.",
+    #"There will be a concert on New Year's Day.",
+    #"Typhoons seldom come in winter.",
+    "The short video spread quickly in China.",
+  ]
   sens = []
-  lang = "de"
+  lang = "en"
   nlp = spacy.load(PKG_INDICES[lang])
   for sentence in sens:
     doc = nlp(sentence)
