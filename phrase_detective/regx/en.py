@@ -15,13 +15,13 @@ NP = [
 # PP preposition phrase pattern
 PP = [
   [{"LOWER": "between"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"LOWER": "and"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}],
-  [{"TAG": "IN"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN", "DEP": "pobj"}, {"TAG": "IN"}, {"POS": "NOUN"}],
-  [{"TAG": "IN"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN", "DEP": "pobj"}],
-  [{"TAG": "IN"}, {"TAG": "IN"}, {"POS": "DET", "OP": "?"}, {"POS": "NOUN"}],
-  [{"TAG": "IN"}, {"POS": "ADV", "OP": "?"}, {"POS": "ADV", "DEP": "pcomp"}],
-  [{"TAG": "IN"}, {"POS": "PROPN", "DEP": "pobj"}],
-  [{"TAG": "IN"}, {"TAG": "CD"}, {"POS": "NOUN", "DEP": "pobj"}],
-  [{"TAG": "IN"}, {"TAG": "CD", "DEP": "pobj"}],
+  [{"TAG": "IN", "LOWER": {"NOT_IN": ["of", "to"]}}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN", "DEP": "pobj"}, {"TAG": "IN"}, {"POS": "NOUN"}],
+  [{"TAG": "IN", "LOWER": {"NOT_IN": ["of", "to"]}}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN", "DEP": "pobj"}],
+  [{"TAG": "IN", "LOWER": {"NOT_IN": ["of", "to"]}}, {"TAG": "IN"}, {"POS": "DET", "OP": "?"}, {"POS": "NOUN"}],
+  [{"TAG": "IN", "LOWER": {"NOT_IN": ["of", "to"]}}, {"POS": "ADV", "OP": "?"}, {"POS": "ADV", "DEP": "pcomp"}],
+  [{"TAG": "IN", "LOWER": {"NOT_IN": ["of", "to"]}}, {"POS": "PROPN", "DEP": "pobj"}],
+  [{"TAG": "IN", "LOWER": {"NOT_IN": ["of", "to"]}}, {"TAG": "CD"}, {"POS": "NOUN", "DEP": "pobj"}],
+  [{"TAG": "IN", "LOWER": {"NOT_IN": ["of", "to"]}}, {"TAG": "CD", "DEP": "pobj"}],
 ]
 
 # VERB Knowledge pattern

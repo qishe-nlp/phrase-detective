@@ -17,12 +17,8 @@ def create_vkb_parser(nlp: Language, name: str):
 
 
 def test_nprecog():
-  lang = "es"
-  sentence = "Qué día más chungo hace, no papá?"
-  sentence = "Pero lo más rollo es hacer las fichas por la trade."
-  sentence = "Más tragedias encima ahora mismo?"
-  sentence = "No es lo mío."
-  sentence = "Porqué no haces un timelapse de esos para que todo esto pase rápido?"
+  lang = "en"
+  sentence = "A compass is most simply a piece of metal that has been magnetized,"
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("nprecog")
   doc = nlp(sentence)
@@ -35,8 +31,9 @@ def test_nprecog():
 
 
 def test_pprecog():
-  lang = "es"
-  sentence = "Lo que tengo ganas es de que podamos salir a la calle."
+  lang = "en"
+  sentence = "A compass is most simply a piece of metal that has been magnetized,"
+
   #sentence = "Es que en el ordenador las ponemos a cámara rápida, se llama Timelapse."
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("pprecog")
