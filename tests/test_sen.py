@@ -39,8 +39,18 @@ def test_sens():
     "he was mesmerized by hundreds of people in the water,",
     "between surfer and shaper.",
   ]
+
+  sens = [
+    #"Lo que tengo ganas es de que podamos salir a la calle.",
+    #"Es que en el ordenador las ponemos a cámara rápida, se llama Timelapse.",
+    #"Qué día más chungo hace, no papá?",
+    #"Pero lo más rollo es hacer las fichas por la trade.",
+    "Más tragedias encima ahora mismo?",
+    "No es lo mío.",
+    "Porqué no haces un timelapse de esos para que todo esto pase rápido?",
+  ]
   #sens = []
-  lang = "en"
+  lang = "es"
   nlp = spacy.load(PKG_INDICES[lang])
   for sentence in sens:
     doc = nlp(sentence)

@@ -43,9 +43,9 @@ class PrepPhraseRecognizer:
     ranges = [(start, end) for _, start, end in matches]
     refined_matches = merge(ranges)
     for start, end in refined_matches:
-      if doc[start].text not in ['of', 'to', 'a']: # TODO: It is bad
-        pp = Span(doc, start, end)
-        phrases.append(pp)
+      #if doc[start].text not in ['of', 'to', 'a']: # TODO: It is bad
+      pp = Span(doc, start, end)
+      phrases.append(pp)
     doc._.prep_phrases = phrases
     return doc
 

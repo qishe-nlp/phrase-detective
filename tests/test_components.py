@@ -17,25 +17,12 @@ def create_vkb_parser(nlp: Language, name: str):
 
 
 def test_nprecog():
-  lang = "en"
-  sentence = "Voy a la playa."
-  sentence = "Hay pocos errores aquí."
-  sentence = "Póngame tres manzanas por favor."
-  sentence = "¿Cuántos libros hay?"
-  sentence = "¡Qué sorpresa!"
-  sentence = "Me quedo en tu casa."
-  sentence = "Los tres chicos son de mi barrio."
-  sentence = "Me gusta tu caminar."
-  sentence = "La desesperada se marchó sola."
-
-  sentence = "Pedro es una persona amable."
-  sentence = "Pedro es una gran persona."
-  sentence = "La pobre chica española fue engañada."
-
-  sentence = "Ella es mi compañera de clase."
-  sentence = "Me gusta la biblioteca de mi universidad."
-  sentence = "Our understanding of surfing"
-  sentence = "he was mesmerized by hundreds of people in the water"
+  lang = "es"
+  sentence = "Qué día más chungo hace, no papá?"
+  sentence = "Pero lo más rollo es hacer las fichas por la trade."
+  sentence = "Más tragedias encima ahora mismo?"
+  sentence = "No es lo mío."
+  sentence = "Porqué no haces un timelapse de esos para que todo esto pase rápido?"
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("nprecog")
   doc = nlp(sentence)
@@ -48,11 +35,9 @@ def test_nprecog():
 
 
 def test_pprecog():
-  lang = "en"
-  sentence = "It's fleeting, but you have to go back to it."
-  sentence = "put your toes over it, do a hang ten."
-  sentence = "he was mesmerized by hundreds of people in the water"
-  sentence = "between surfer and shaper."
+  lang = "es"
+  sentence = "Lo que tengo ganas es de que podamos salir a la calle."
+  #sentence = "Es que en el ordenador las ponemos a cámara rápida, se llama Timelapse."
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("pprecog")
   doc = nlp(sentence)
