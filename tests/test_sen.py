@@ -33,8 +33,14 @@ def test_sens():
     #"Perdió la guerra por ambicioso.",
     "El Gobierno aún tiene por delante una difícil tarea.",
   ]
+
+  sens = [
+    "A surfboard is made out of a core element",
+    "he was mesmerized by hundreds of people in the water,",
+    "between surfer and shaper.",
+  ]
   #sens = []
-  lang = "es"
+  lang = "en"
   nlp = spacy.load(PKG_INDICES[lang])
   for sentence in sens:
     doc = nlp(sentence)

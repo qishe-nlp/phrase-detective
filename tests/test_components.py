@@ -17,7 +17,7 @@ def create_vkb_parser(nlp: Language, name: str):
 
 
 def test_nprecog():
-  lang = "es"
+  lang = "en"
   sentence = "Voy a la playa."
   sentence = "Hay pocos errores aquí."
   sentence = "Póngame tres manzanas por favor."
@@ -34,6 +34,8 @@ def test_nprecog():
 
   sentence = "Ella es mi compañera de clase."
   sentence = "Me gusta la biblioteca de mi universidad."
+  sentence = "Our understanding of surfing"
+  sentence = "he was mesmerized by hundreds of people in the water"
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("nprecog")
   doc = nlp(sentence)
@@ -46,21 +48,11 @@ def test_nprecog():
 
 
 def test_pprecog():
-  lang = "es"
-  sentence = "Es un libro de chino."
-  sentence = "Quiero un café con leche."
-  sentence = "Voy al gimnasio esta tarde."
-  sentence = "A mi primo, le gusta leer libros."
-
-  sentence = "Eres uno de nosotros."
-  sentence = "No quiero nada de ti."
-  
-  sentence = "Un hombre salió de entre la gente."
-  sentence = "Perdió la guerra por ambicioso."
-
-  sentence = "El Gobierno aún tiene por delante una difícil tarea."
-  sentence = "Es un paso por delante de la evolución de la tecnología."
-
+  lang = "en"
+  sentence = "It's fleeting, but you have to go back to it."
+  sentence = "put your toes over it, do a hang ten."
+  sentence = "he was mesmerized by hundreds of people in the water"
+  sentence = "between surfer and shaper."
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("pprecog")
   doc = nlp(sentence)
