@@ -49,6 +49,7 @@ def test_sens():
     "No es lo mío.",
     "Porqué no haces un timelapse de esos para que todo esto pase rápido?",
   ]
+
   #sens = []
   lang = "es"
   nlp = spacy.load(PKG_INDICES[lang])

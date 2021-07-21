@@ -16,13 +16,13 @@ NP = [
 
 # PP preposition phrase pattern
 PP = [
-  [{"POS": "ADP"}, {"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADJ", "OP": "?"}],
-  [{"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NUM", "OP": "?"}, {"POS": "NOUN"}],
-  [{"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADJ", "OP": "?"}],
-  [{"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "PROPN"}],
-  [{"POS": "ADP"}, {"POS": "ADV"}, {"POS": "ADP", "OP": "?"}],
-  [{"POS": "ADP"}, {"POS": "PRON"}],
-  [{"POS": "ADP"}, {"POS": "ADJ"}],
+  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADJ", "OP": "?"}],
+  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NUM", "OP": "?"}, {"POS": "NOUN"}],
+  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADJ", "OP": "?"}],
+  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "DET", "OP": "?"}, {"POS": "PROPN"}],
+  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "ADV"}, {"POS": "ADP", "OP": "?"}],
+  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "PRON"}],
+  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "ADJ"}],
 ]
 
 # VERB Knowledge pattern
