@@ -4,18 +4,22 @@
 
 # NP noun phrase pattern
 NP = [
-  [{"POS": "DET", "OP": "+"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}],
-  [{"POS": "DET"}, {"POS": "NOUN"}, {"POS": "ADV", "OP": "?"}, {"POS": "ADJ"}],
-  [{"POS": "NOUN"}, {"POS": "ADJ"}],
+  [{"POS": "DET"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADV", "OP": "?"}, {"POS": "ADJ"}],
+  [{"POS": "DET"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "NOUN", "DEP": "nmod"}],
   [{"POS": "DET", "OP": "?"}, {"POS": "NUM"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}],
+  [{"POS": "DET", "OP": "+"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}],
+  [{"POS": "NOUN"}, {"POS": "ADJ"}],
 ]
 
 # PP preposition phrase pattern
 PP = [
   [{"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NUM", "OP": "?"}, {"POS": "NOUN"}],
-  [{"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADJ", "OP": "?"}],
+  [{"POS": "ADP"}, {"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADJ", "OP": "?"}],
+  [{"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADJ", "OP": "?"}],
   [{"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "PROPN"}],
+  [{"POS": "ADP"}, {"POS": "ADV"}, {"POS": "ADP", "OP": "?"}],
   [{"POS": "ADP"}, {"POS": "PRON"}],
+  [{"POS": "ADP"}, {"POS": "ADJ"}],
 ]
 
 # VERB Knowledge pattern

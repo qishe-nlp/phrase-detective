@@ -17,25 +17,23 @@ def create_vkb_parser(nlp: Language, name: str):
 
 
 def test_nprecog():
-  lang = "en"
-  #sentence = "Those people are so friendly!"
-  #sentence = "The river is deeper after it rains."
-  #sentence = "An enormous tree stands on the riverbank."
-  #sentence = "The very tall consultant is saying something."
-  #sentence = "Unmarried men are a rare species these days."
-  #sentence = "Fresh water is a precious resource in Saudi Arabia."
+  lang = "es"
+  sentence = "Voy a la playa."
+  sentence = "Hay pocos errores aquí."
+  sentence = "Póngame tres manzanas por favor."
+  sentence = "¿Cuántos libros hay?"
+  sentence = "¡Qué sorpresa!"
+  sentence = "Me quedo en tu casa."
+  sentence = "Los tres chicos son de mi barrio."
+  sentence = "Me gusta tu caminar."
+  sentence = "La desesperada se marchó sola."
 
-  #sentence = "A tennis ball is a ball for playing tennis."
-  #sentence = "Tennis shoes are shoes for playing tennis."
+  sentence = "Pedro es una persona amable."
+  sentence = "Pedro es una gran persona."
+  sentence = "La pobre chica española fue engañada."
 
-  #sentence = "This isn’t anything important."
-  #sentence = "He wanted to get someone reliable to help in this work."
-
-  #sentence = "People here know each other."
-  #sentence = "It had been fine the day before."
-
-  #sentence = "He is a student of astronomy."
-  sentence = "Even a small rise in interest rates would hurt borrowers."
+  sentence = "Ella es mi compañera de clase."
+  sentence = "Me gusta la biblioteca de mi universidad."
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("nprecog")
   doc = nlp(sentence)
@@ -48,24 +46,20 @@ def test_nprecog():
 
 
 def test_pprecog():
-  lang = "en"
-  sentence = "Don’t walk on the grass."
-  sentence = "After the interview, they phoned the police."
-  sentence = "We saw a girl with a small dog."
-  sentence = "We saw a girl with small dogs."
+  lang = "es"
+  sentence = "Es un libro de chino."
+  sentence = "Quiero un café con leche."
+  sentence = "Voy al gimnasio esta tarde."
+  sentence = "A mi primo, le gusta leer libros."
 
-  sentence = "And for me, I feel it's the key way to keep moving forward."
+  sentence = "Eres uno de nosotros."
+  sentence = "No quiero nada de ti."
+  
+  sentence = "Un hombre salió de entre la gente."
+  sentence = "Perdió la guerra por ambicioso."
 
-  sentence = "He looked at me from behind the tree."
-  sentence = "I can't see you until after lunch."
-  sentence = "Just come through here and I ’ll show you where the problem is."
-  sentence = "Many of these treatments were used until quite recently."
-
-
-  #sentence = "They left just after six о'clock."
-  sentence = "There will be a concert on New Year's Day."
-  sentence = "Typhoons seldom come in winter."
-  sentence = "The short video spread quickly in China."
+  sentence = "El Gobierno aún tiene por delante una difícil tarea."
+  sentence = "Es un paso por delante de la evolución de la tecnología."
 
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("pprecog")

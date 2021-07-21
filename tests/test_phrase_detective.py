@@ -1,5 +1,5 @@
 from phrase_detective import __version__
 
 def test_version():
-    assert __version__ == '0.1.17'
+    assert __version__ == '0.1.18'
 
