@@ -4,18 +4,19 @@
 
 # NP noun phrase pattern
 NP = [
-  [{"POS": "DET"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "NOUN", "DEP": "nmod"}],
-  [{"POS": "DET"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADV", "OP": "?"}, {"POS": "ADJ"}],
+  [{"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "NOUN"}],
+  [{"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"DEP": "advmod", "OP": "?"}, {"POS": "ADJ"}],
   [{"POS": "DET", "OP": "?"}, {"POS": "NUM"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}],
   [{"POS": "DET", "OP": "+"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}],
-  [{"LOWER": "lo"}, {"POS": "ADV"}, {"POS": "NOUN"}],
-  [{"POS": "NOUN"}, {"POS": "ADJ"}],
-  [{"LOWER": "lo"}, {"POS": "DET", "DEP": "compound"}],
-  [{"POS": "DET"}, {"POS": "PRON"}],
+  [{"POS": "DET"}, {"LOWER": {"NOT_IN": ["que"]}, "POS": {"IN": ["PRON", "PROPN"]}}],
+  [{"POS": {"IN": ["DET", "PRON"]}}, {"POS": "ADJ", "DEP": "nsubj"}, {"POS": "ADJ", "OP": "?"}],
+  [{"POS": "ADJ"}, {"POS": "NOUN"}],
+  [{"POS": "NOUN"}, {"POS": "PRON","MORPH": {"IS_SUPERSET": ["Poss=Yes"]}}],
 ]
 
 # PP preposition phrase pattern
 PP = [
+  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "NOUN"}],
   [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADJ", "OP": "?"}],
   [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NUM", "OP": "?"}, {"POS": "NOUN"}],
   [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADJ", "OP": "?"}],

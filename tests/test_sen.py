@@ -50,6 +50,14 @@ def test_sens():
     "Porqué no haces un timelapse de esos para que todo esto pase rápido?",
   ]
 
+  sens = [
+    #"Los primeros son los más rápidos.",
+    #"Lo único importante es su literatura.",
+    #"Lo gracioso es que podemos dibujar hasta flores.",
+    "y me despierto cada día en medio de un huracán",
+    "Para la hija del jefe lo que haga falta",
+    "Yo no sé cómo podéis vivir tranquilas en un primero",
+  ]
   #sens = []
   lang = "es"
   nlp = spacy.load(PKG_INDICES[lang])
