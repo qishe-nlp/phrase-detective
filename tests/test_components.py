@@ -18,25 +18,30 @@ def create_vkb_parser(nlp: Language, name: str):
 
 def test_nprecog():
   lang = "es"
-  sentence = "Vicenta, has visto cómo está este mando a distancia?"
-  sentence = "Estos ya no saben qué hacer para quitarse los viejos de encima"
-  sentence = "Precioso día"
-  sentence = "A mí tampoco, qué vergüenza!"
-  sentence = "Llámame, que yo creo que los tíos estos que ha traído tu padre están haciendo lo que les da la gana"
-  sentence = "La que lleva esto es mi novia y está trabajando y no me coge el teléfono"
-  sentence = "Los que han roto la puerta"
-  sentence = "Pues vaya guardián de perro!"
-  sentence = "Se me ha ocurrido una idea super original para hablar con Fernando"
-  sentence = "Ay madre que día llevo, dios de mi vida, qué cansancio"
-  sentence = "Ay dios mío! Que nos han entrado en casa"
-  sentence = "Lo mismo os violan que os matan a las 2"
-  sentence = "Yo no sé cómo podéis vivir tranquilas en un primero"
-  #sentence = "La desesperada se marchó sola."
-  #sentence = "Los primeros son los más rápidos."
-  #sentence = "Lo único importante es su literatura."
-  #sentence = "Lo gracioso es que podemos dibujar hasta flores."
-  #sentence = "No les hagas caso, son unos miserables."
-
+  sentence = "No puedo Juan porque es que tengo cita en el ginecólogo"
+  #sentence = "Pues a nosotras nos han entrado en nuestra casa a robar porque está el portal todo el santo día abierto!"
+  #sentence = "Señoras, enhorabuena por su elección! Este sistema de alarma consta de 3 sensores de movimiento"
+  #sentence = "El qué?"
+  #sentence = "Mete el código por favor"
+  #sentence = "En vista de vuestra actitud, no me queda más remedio que convocar una junta extraordinaria de vecinos"
+  #sentence = "Según el artículo 17 de la ley de propriedad horizontal párrafo 5"
+  #sentence = "A mí se me está cayendo el pelo por el estrés"
+  #sentence = "Ya estás otra vez con la acidez?"
+  #sentence = "Esto es el colmo! También instalan alarmas sin mi permiso"
+  #sentence = "No tengo yo otra cosa que hacer a estas alturas que ir de hetero por la vida"
+  #sentence = "Que si quieres tirar 5 años de relación por la borda, que los tires"
+  #sentence = "Hombre por favor! Que tengo a los niños durmiendo"
+  #sentence = "No, 3 millones de pesetas por piso"
+  #sentence = "Es que se ha puesto nerviosa y ha tratado de cortarse las venas con el abono de transporte"
+  #sentence = "Haz el ridículo tú sola!"
+  #sentence = "3 nada más?"
+  #sentence = "Tranquilo que solo quería meterle el miedo en el cuerpo"
+  #sentence = "Es ese tío de abajo que me pone enferma"
+  #sentence = "Señoras por dios!"
+  #sentence = "Le va a poner hielo al vino?"
+  #sentence = "Mi marido es el único que se presenta todos los años voluntario"
+  #sentence = "Y yo creo que lo mejor sería que fuéramos solo amigos"
+  #sentence = "El baño está ahí al fondo a la derecha"
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("nprecog")
   doc = nlp(sentence)
@@ -50,9 +55,9 @@ def test_nprecog():
 
 def test_pprecog():
   lang = "es"
-  #sentence = "y me despierto cada día en medio de un huracán"
-  sentence = "Para la hija del jefe lo que haga falta"
-
+  sentence = "Bueno, por lo menos no se han llevado nada"
+  sentence = "Pues que ha llegado el presidente de la comunidad y amparándose en no sé qué párrafo de no sé qué artículo"
+  sentence = "Al primero B por el aire acondicionado"
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("pprecog")
   doc = nlp(sentence)

@@ -3,67 +3,25 @@ import spacy
 
 def test_sens():
   sens = [
-    "This isn’t anything important.",
-    "He wanted to get someone reliable to help in this work.",
-    "People here know each other.",
-    "It had been fine the day before.",
-
-    "He is a student of astronomy.",
-    "Even a small rise in interest rates would hurt borrowers.",
-
-    "He looked at me from behind the tree.",
-    "I can't see you until after lunch.",
-
-    "Just come through here and I ’ll show you where the problem is.",
-    "Many of these treatments were used until quite recently.",
-
-    "They left just after six о'clock.",
-    "There will be a concert on New Year's Day.",
-    "Typhoons seldom come in winter.",
-    "The short video spread quickly in China.",
-  ]
-
-  sens = [
-    #"Los tres chicos son de mi barrio.",
-    "Me gusta tu caminar.",
-    #"La desesperada se marchó sola.",
-    #"Ella es mi compañera de clase.",
-    #"Me gusta la biblioteca de mi universidad."
-    #"Un hombre salió de entre la gente.",
-    #"Perdió la guerra por ambicioso.",
-    "El Gobierno aún tiene por delante una difícil tarea.",
-  ]
-
-  sens = [
-    "A surfboard is made out of a core element",
-    "he was mesmerized by hundreds of people in the water,",
-    "between surfer and shaper.",
-  ]
-
-  sens = [
-    #"Lo que tengo ganas es de que podamos salir a la calle.",
-    #"Es que en el ordenador las ponemos a cámara rápida, se llama Timelapse.",
-    #"Qué día más chungo hace, no papá?",
-    #"Pero lo más rollo es hacer las fichas por la trade.",
-    "Más tragedias encima ahora mismo?",
-    "No es lo mío.",
-    "Porqué no haces un timelapse de esos para que todo esto pase rápido?",
-  ]
-
-  sens = [
-    #"Los primeros son los más rápidos.",
-    #"Lo único importante es su literatura.",
-    #"Lo gracioso es que podemos dibujar hasta flores.",
-    "y me despierto cada día en medio de un huracán",
-    "Para la hija del jefe lo que haga falta",
-    "Yo no sé cómo podéis vivir tranquilas en un primero",
+    "Mi marido es el único que se presenta todos los años voluntario",
+    "Y yo creo que lo mejor sería que fuéramos solo amigos",
+    "3 nada más?",
+    "Haz el ridículo tú sola!",
+    "Pues a nosotras nos han entrado en nuestra casa a robar porque está el portal todo el santo día abierto!",
+    "Ahora tienen que introducir un código secreto de 4 dígitos",
+    "Bueno, por lo menos no se han llevado nada",
+    "Pues que ha llegado el presidente de la comunidad y amparándose en no sé qué párrafo de no sé qué artículo",
+    "Al primero B por el aire acondicionado",
   ]
   #sens = []
   lang = "es"
   nlp = spacy.load(PKG_INDICES[lang])
+  docs = []
   for sentence in sens:
     doc = nlp(sentence)
     for t in doc:
       print("{}: {} {} {} {}".format(t.text, t.pos_, t.morph, t.tag_, t.dep_))
     print()
+    docs.append(doc)
+  #spacy.displacy.serve(docs, style="dep")
 
