@@ -18,30 +18,23 @@ def create_vkb_parser(nlp: Language, name: str):
 
 def test_nprecog():
   lang = "es"
-  sentence = "No puedo Juan porque es que tengo cita en el ginecólogo"
-  #sentence = "Pues a nosotras nos han entrado en nuestra casa a robar porque está el portal todo el santo día abierto!"
-  #sentence = "Señoras, enhorabuena por su elección! Este sistema de alarma consta de 3 sensores de movimiento"
-  #sentence = "El qué?"
-  #sentence = "Mete el código por favor"
-  #sentence = "En vista de vuestra actitud, no me queda más remedio que convocar una junta extraordinaria de vecinos"
-  #sentence = "Según el artículo 17 de la ley de propriedad horizontal párrafo 5"
-  #sentence = "A mí se me está cayendo el pelo por el estrés"
-  #sentence = "Ya estás otra vez con la acidez?"
-  #sentence = "Esto es el colmo! También instalan alarmas sin mi permiso"
-  #sentence = "No tengo yo otra cosa que hacer a estas alturas que ir de hetero por la vida"
-  #sentence = "Que si quieres tirar 5 años de relación por la borda, que los tires"
-  #sentence = "Hombre por favor! Que tengo a los niños durmiendo"
-  #sentence = "No, 3 millones de pesetas por piso"
-  #sentence = "Es que se ha puesto nerviosa y ha tratado de cortarse las venas con el abono de transporte"
-  #sentence = "Haz el ridículo tú sola!"
-  #sentence = "3 nada más?"
-  #sentence = "Tranquilo que solo quería meterle el miedo en el cuerpo"
-  #sentence = "Es ese tío de abajo que me pone enferma"
-  #sentence = "Señoras por dios!"
-  #sentence = "Le va a poner hielo al vino?"
-  #sentence = "Mi marido es el único que se presenta todos los años voluntario"
-  #sentence = "Y yo creo que lo mejor sería que fuéramos solo amigos"
-  #sentence = "El baño está ahí al fondo a la derecha"
+
+  sentence = "qué tal doña concha?"
+  sentence = "Ten cuidado bonito! No te vayas a tropezar y te rompes los dientes contra un banco"
+  sentence = "Yo tengo que hacer ejercicio, me paso el día sentado"
+  sentence = "Pero tú te crees que te voy a dejar en mi casa solo?"
+  sentence = "Hombre claro, las lesiones son mayores pero bueno, para esto está el seguro, no?"
+  sentence = "Ay pobrecito, yo lo veo hecho polvo"
+  sentence = "Y la pequeña la tengo con depresión porque la dejó el marido y además con una niña de 6 meses"
+  sentence = "Y mi marido en paro. Ahora está haciendo un cursillo de esos de reciclaje pero yo le sigo viendo la misma cara de amargura"
+  sentence = "Si es que yo llego aquí y os veo a vosotros tan guapos y tan felices y empezando una vida juntos"
+  sentence = "Encima voy a ser yo el malo de la película!"
+  sentence = "Y ahora noto como...como como un poco de angustia y me cuesta respirar pero es de ilusión"
+  #sentence = "Y hacemos queso de cabra y plantamos tomates"
+  #sentence = "Que hay junta de vecinos?"
+  #sentence = "Bueno, el hecho es que no tenemos seguro de responsabilidad civil y hay que pagarle los días de baja"
+  sentence = "O mejor, se lo voy a decir a mi madre que venga un par de veces por semana"
+  sentence = "Hombre pues un poco de pinta sí que tienes, mira"
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("nprecog")
   doc = nlp(sentence)
@@ -55,9 +48,14 @@ def test_nprecog():
 
 def test_pprecog():
   lang = "es"
-  sentence = "Bueno, por lo menos no se han llevado nada"
-  sentence = "Pues que ha llegado el presidente de la comunidad y amparándose en no sé qué párrafo de no sé qué artículo"
-  sentence = "Al primero B por el aire acondicionado"
+  #sentence = "you are in touch with the very center of our planet,"
+  #sentence = "because it's literally how we find our way across the face of the Earth."
+  #sentence = "and we use compasses to find our way north because of that fact."
+  #sentence = "Just come through here and I ’ll show you where the problem is."
+  #sentence = "There will be a concert on New Year's Day."
+  #sentence = "After the interview, they phoned the police."
+
+  sentence = "Pero tú te crees que te voy a dejar en mi casa solo?"
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("pprecog")
   doc = nlp(sentence)
