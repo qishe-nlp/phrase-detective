@@ -36,8 +36,14 @@ def test_sens():
     "O mejor, se lo voy a decir a mi madre que venga un par de veces por semana",
     "Deja en paz a la gente que te pones muy pesada",
   ]
+
+  sens = [
+    #"Das kann nur bedeuten, dass er mit der Kehlkopfgewebeprobe des Kronprinzen zurück aus San Remo.",
+    #"Prof. von Bergmann wird sie operieren. Aber der Professor ist leider nicht im Hause.",
+    "Wilhelm ist 28, voller Tatendrang, außerdem national.",
+  ]
   #sens = []
-  lang = "es"
+  lang = "de"
   nlp = spacy.load(PKG_INDICES[lang])
   docs = []
   for sentence in sens:

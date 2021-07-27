@@ -21,19 +21,21 @@ NP = [
 ]
 
 # PP preposition phrase pattern
+ADP = [{"POS": "ADP", "LOWER": {"NOT_IN": ["von", "bis"]}}]
 PP = [
-  [{"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "DET"}, {"POS": "NOUN", "DEP": "ag"}],
-  [{"POS": "ADP"}, {"POS": "NOUN", "DEP": "nk"}, {"POS": "CCONJ", "DEP": "cd"}, {"POS": "NOUN", "DEP": "cj"}],
-  [{"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}],
-  [{"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "PROPN"}],
-  [{"POS": "ADP"}, {"POS": "ADP"}, {"POS": "DET"}, {"POS": "NOUN"}],
-  [{"POS": "ADP"}, {"POS": "NOUN", "DEP": "ag"}, {"POS": "NOUN"}],
-  [{"POS": "ADP"}, {"POS": "PROPN", "DEP": "ag"}, {"POS": "NOUN"}],
-  [{"POS": "ADP"}, {"POS": "ADV"}],
-  [{"POS": "ADP"}, {"POS": "NOUN"}],
-  [{"POS": "ADP"}, {"POS": "PROPN"}],
-  [{"POS": "ADP"}, {"POS": "PRON"}],
-  [{"POS": "ADP"}, {"TAG": "NN"}],
+  [{"LOWER": "von"}, {"POS": "NUM"}, {"POS": "NOUN", "OP": "?"}, {"LOWER": "bis"}, {"POS": "NUM"}, {"POS": "NOUN", "OP": "?"}],
+  ADP + [{"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "DET"}, {"POS": "NOUN", "DEP": "ag"}],
+  ADP + [{"POS": "NOUN", "DEP": "nk"}, {"POS": "CCONJ", "DEP": "cd"}, {"POS": "NOUN", "DEP": "cj"}],
+  ADP + [{"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NUM", "OP": "?"}, {"POS": "NOUN"}],
+  ADP + [{"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "PROPN"}],
+  ADP + [{"POS": "ADP"}, {"POS": "DET"}, {"POS": "NOUN"}],
+  ADP + [{"POS": "NOUN", "DEP": "ag"}, {"POS": "NOUN"}],
+  ADP + [{"POS": "PROPN", "DEP": "ag"}, {"POS": "NOUN"}],
+  ADP + [{"POS": "ADV"}],
+  ADP + [{"POS": "NOUN"}],
+  ADP + [{"POS": "PROPN", "OP": "+"}],
+  ADP + [{"POS": "PRON"}],
+  ADP + [{"TAG": "NN"}],
 ]
 
 # TODO: VERB Knowledge pattern
