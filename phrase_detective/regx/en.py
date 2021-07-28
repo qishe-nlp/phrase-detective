@@ -2,14 +2,17 @@
 """
 
 # NP noun phrase pattern
-BASE_PPP_1 = [{"POS": "ADP"}, {"POS": "ADV", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN", "OP": "?"}, {"POS": "NOUN", "DEP": "pobj"}]
-BASE_PPP_2 = [{"POS": "ADP"}, {"POS": "ADV", "OP": "?"}, {"TAG": "VBG", "OP": "?"}, {"POS": "NOUN", "OP": "?"}, {"POS": "NOUN", "DEP": "pobj"}]
-BASE_PPP_3 = [{"POS": "ADP"}, {"POS": "ADV", "OP": "?"}, {"TAG": "PRP$", "OP": "?"}, {"POS": "NOUN", "OP": "?"}, {"POS": "NOUN", "DEP": "pobj"}]
+EXCLUDED_PREP = ["to", "into", "out", "than"]
+BASE_PPP_1 = [{"POS": "ADP", "LOWER": {"NOT_IN": EXCLUDED_PREP}}, {"POS": "DET", "OP": "?"}, {"POS": "ADV", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN", "OP": "?"}, {"POS": {"IN": ["NOUN", "PROPN"]}, "DEP": "pobj"}]
+BASE_PPP_2 = [{"POS": "ADP", "LOWER": {"NOT_IN": EXCLUDED_PREP}}, {"POS": "DET", "OP": "?"}, {"POS": "ADV", "OP": "?"}, {"TAG": "VBG", "OP": "?"}, {"POS": "NOUN", "OP": "?"}, {"POS": {"IN": ["NOUN", "PROPN"]}, "DEP": "pobj"}]
+BASE_PPP_3 = [{"POS": "ADP", "LOWER": {"NOT_IN": EXCLUDED_PREP}}, {"POS": "DET", "OP": "?"}, {"POS": "ADV", "OP": "?"}, {"TAG": "PRP$", "OP": "?"}, {"POS": "NOUN", "OP": "?"}, {"POS": {"IN": ["NOUN", "PROPN"]}, "DEP": "pobj"}]
 
 NP = [
-  [{"POS": "DET", "OP": "?"}, {"POS": "ADV", "OP": "?"}, {"POS": "ADJ", "OP": "*"}, {"POS": "NOUN"}] + BASE_PPP_1,
-  [{"POS": "DET", "OP": "?"}, {"POS": "ADV", "OP": "?"}, {"POS": "ADJ", "OP": "*"}, {"POS": "NOUN"}] + BASE_PPP_2,
-  [{"POS": "DET", "OP": "?"}, {"POS": "ADV", "OP": "?"}, {"POS": "ADJ", "OP": "*"}, {"POS": "NOUN"}] + BASE_PPP_3,
+  [{"POS": "DET", "OP": "?"}, {"POS": "NOUN"}, {"POS": "PART", "TAG": "POS"}, {"POS": "NOUN"}],
+  [{"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "CCONJ"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN", "DEP": "conj"}],
+  [{"POS": "DET", "OP": "?"}, {"POS": "ADV", "OP": "?"}, {"POS": "NUM", "OP": "?"}, {"POS": "ADJ", "OP": "*"}, {"POS": "NOUN"}] + BASE_PPP_1,
+  [{"POS": "DET", "OP": "?"}, {"POS": "ADV", "OP": "?"}, {"POS": "NUM", "OP": "?"},{"POS": "ADJ", "OP": "*"}, {"POS": "NOUN"}] + BASE_PPP_2,
+  [{"POS": "DET", "OP": "?"}, {"POS": "ADV", "OP": "?"}, {"POS": "NUM", "OP": "?"}, {"POS": "ADJ", "OP": "*"}, {"POS": "NOUN"}] + BASE_PPP_3,
   [{"POS": "DET"}, {"POS": "ADV", "OP": "?"}, {"POS": "ADJ", "OP": "*"}, {"POS": "NOUN"}],
   [{"POS": "DET"}, {"POS": "ADV", "OP": "?"}, {"TAG": "VBG", "OP": "*"}, {"POS": "NOUN"}],
   [{"POS": "DET", "OP": "?"}, {"POS": "NOUN", "DEP": "compound"}, {"POS": "NOUN"}],
@@ -24,6 +27,7 @@ BASE_PNP = [{"POS": "DET", "OP": "?"}, {"POS": "ADV", "OP": "?"}, {"POS": "ADJ",
 PP = [
   [{"LOWER": "between"}] + BASE_PNP + [{"LOWER": "and"}] + BASE_PNP,
   [{"LOWER": "from"}] + BASE_PNP  + [{"LOWER": "to"}] + BASE_PNP,
+  [{"LOWER": "as"}, {"POS": {"IN": ["ADV", "ADJ"]}}, {"LOWER": "as"}, {"POS": {"IN": ["ADJ", "PROPN"]}}],
   [{"TAG": "IN", "LOWER": {"NOT_IN": EXCLUDED_PREP}}] + BASE_PNP + [{"TAG": "IN"}] + BASE_PNP,
   [{"TAG": "IN", "LOWER": {"NOT_IN": EXCLUDED_PREP}}] + BASE_PNP, 
   [{"TAG": "IN", "LOWER": {"NOT_IN": EXCLUDED_PREP}}] + [{"TAG": "IN"}] + BASE_PNP,

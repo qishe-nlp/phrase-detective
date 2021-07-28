@@ -17,9 +17,23 @@ def create_vkb_parser(nlp: Language, name: str):
 
 
 def test_nprecog():
-  lang = "de"
+  lang = "en"
 
-  sentence = "Das kann nur bedeuten, dass er mit der Kehlkopfgewebeprobe des Kronprinzen zurück aus San Remo."
+  sentence = "So many of our brothers and sisters"
+  sentence = "and our sons and brothers, husbands and fathers"
+  sentence = "How could you contemplate such ruin and disappointment to yourself"
+  sentence = "Over the coming weeks and months, you will all bear witness"
+  sentence = "to conceal your infatuation for another man's wife."
+  sentence = "I'm sure all the kids' dads love her too."
+  sentence = "I rather like what I've seen of her. What, the shopkeeper's daughter?"
+  sentence = "500 pages of instructions."
+  sentence = "We've received a copy of a telegram"
+  sentence = "With a nasty dose of the horrors when she sits on a horse."
+  sentence = "She believes the people of Britain will help to accomplish it."
+  sentence = "She's had a bit of a nervous breakdown."
+  sentence = "she believes the country has to change from top to bottom,"
+  sentence = "As a young woman, she applied for a job as a food research chemist"
+
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("nprecog")
   doc = nlp(sentence)
@@ -32,14 +46,11 @@ def test_nprecog():
 
 
 def test_pprecog():
-  lang = "de"
-  sentence = "Das kann nur bedeuten, dass er mit der Kehlkopfgewebeprobe des Kronprinzen zurück aus San Remo."
-  sentence = "Prof. von Bergmann wird sie operieren. Aber der Professor ist leider nicht im Hause."
-  sentence = "Niemand außer ihm und Prof. von Bergmann beherrscht diesen neuen Eingriff."
-  sentence = "Sie werden also selbst Ihre Schulden über 137,10 Mark in Ihre Abarbeiten in der Stelung als Hilfswärterin."
-  sentence = "Sie bekommen Verpflegung 3. Klasse. Dienst ist täglich von 4:30 Uhr bis 22 Uhr."
-  sentence = "Sonntags von 3 bis 6 dienstfrei. Ausgang gibt es allerdings nur mit meiner schriftlichen Erlaubnis."
-  sentence = "Ich hätte nie gedacht, dass Sie also zu den 99 Narren gehören,"
+  lang = "en"
+  sentence = "she believes the country has to change from top to bottom,"
+  sentence = "As a young woman, she applied for a job as a food research chemist"
+  sentence = "The fact is, I haven't met anyone I like as much as Camilla,"
+
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("pprecog")
   doc = nlp(sentence)

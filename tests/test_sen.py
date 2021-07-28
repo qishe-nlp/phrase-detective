@@ -3,47 +3,29 @@ import spacy
 
 def test_sens():
   sens = [
-    #"I think the reason buttons have endured for so long, historically,",
-    #"The one that we all think of is the pocket compass.",
-    #"and come up with the compass rose.",
-    #"Double Dutch jump rope remains a powerful symbol of culture and identity",
-    #"which is why, I think, so many hiphop artists",
-    "where this kind of roiling ball of molten iron",
-    #"what north, south, east and west looked like,",
-    "you get a lot more detail",
-    "Magnetism is still a pretty mysterious force to physicists,",
-    "you are in touch with the very center of our planet,",
-    "where this kind of roiling ball of molten iron",
-    #"but you can also reliably find your way home.",
-  ]
-  sens = [
-    "die jetzt alle oben verbreitet werden, auch von den Ärzten der Charité.",
-    "Sollte sie jedoch die nächsten 24 Stunden überstehen und das Fieber sinken, hat sie eine Chance.",
-    "und der Gesetzentwurf zur Beschränkung der Kinderarbeit liegen bereits in meiner Schublade.",
-    "Unruhe ist ein Zeichen von Schmerzen. Tischendorf.",
-    "Er wird ein aufgehender Stern am Forscherhimmel des Koch'schen Instituts."
-    "Atemgeräusche über der Lungenspitze sind deutlich abgeschwächt.",
-    "Deren medizinische Vorstellungen in der Journal sind teilweise abenteuerlich.",
-    "Meine Herren, vergessen Sie nie, den Segen, den das Chloroform in die Operationssäle gebracht hat.",
+    "So many of our brothers and sisters",
+    "and our sons and brothers, husbands and fathers",
+    "How could you contemplate such ruin and disappointment to yourself",
+    "Over the coming weeks and months, you will all bear witness",
   ]
 
   sens = [
-    #"qué tal doña concha?",
-    #"Ten cuidado bonito! No te vayas a tropezar y te rompes los dientes contra un banco",
-    #"Pues es que a mí me duele la espalda y la vértebra y tengo un disco rayado",
-    "Encima voy a ser yo el malo de la película!",
-    "Y ahora noto como...como como un poco de angustia y me cuesta respirar pero es de ilusión",
-    "O mejor, se lo voy a decir a mi madre que venga un par de veces por semana",
-    "Deja en paz a la gente que te pones muy pesada",
+    "have given their lives in resistance to that occupation,",
+    "An Olympian who's spent much of the past year on her backside.",
+    "Salmon fishing with friends.",
+    "They that go down to the sea in ships…",
   ]
 
+
   sens = [
-    #"Das kann nur bedeuten, dass er mit der Kehlkopfgewebeprobe des Kronprinzen zurück aus San Remo.",
-    #"Prof. von Bergmann wird sie operieren. Aber der Professor ist leider nicht im Hause.",
-    "Wilhelm ist 28, voller Tatendrang, außerdem national.",
+    #"to conceal your infatuation for another man's wife.",
+    #"I'm sure all the kids' dads love her too.",
+    #"We've received a copy of a telegram",
+    "She believes the people of Britain will help to accomplish it.",
+    "I will not be drawn on any subject save the weather.",
   ]
   #sens = []
-  lang = "de"
+  lang = "en"
   nlp = spacy.load(PKG_INDICES[lang])
   docs = []
   for sentence in sens:
