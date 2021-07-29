@@ -46,11 +46,11 @@ def test_nprecog():
 
 
 def test_pprecog():
-  lang = "en"
-  sentence = "she believes the country has to change from top to bottom,"
-  sentence = "As a young woman, she applied for a job as a food research chemist"
-  sentence = "The fact is, I haven't met anyone I like as much as Camilla,"
+  lang = "es"
 
+  sentence = "Es que esto es un dineral para uno solo"
+  sentence = "Qué? Angustiado por la rutina de la vida conyugal, dipuesto a vivir el espejismo"
+  sentence = "Cómo me alegro de que estés otra vez en casa, cariño"
   nlp = spacy.load(PKG_INDICES[lang])
   nlp.add_pipe("pprecog")
   doc = nlp(sentence)
