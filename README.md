@@ -29,25 +29,6 @@ def noun_phrase(lang, sentence):
     print(np.text)
 
 ```
-### Detect preposition phrases 
-
-```
-import spacy
-from spacy import Language
-from phrase_detective import PrepPhraseRecognizer, PKG_INDICES
-
-@Language.factory("pprecog")
-def create_pp_parser(nlp: Language, name: str):
-  return PrepPhraseRecognizer(nlp) 
-
-def prep_phrase(lang, sentence):
-  nlp = spacy.load(PKG_INDICES[lang])
-  nlp.add_pipe("pprecog")
-  doc = nlp(sentence)
-  for np in doc._.prep_phrases:
-    print(np.text)
-```
-
 ### Detect verb phrases 
 
 ```
@@ -91,7 +72,7 @@ poetry run pytest -rP
 ```
 which run tests under `tests/*`
 
-### Create sphix docs
+### Create sphinx docs
 ```
 poetry shell
 cd apidocs

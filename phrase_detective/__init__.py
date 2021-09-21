@@ -31,25 +31,6 @@ Components for ``spacy`` pipeline, to detect noun phrase, prep phrase, verb rela
       for np in doc._.noun_phrases:
         print(np.text)
 
-.. topic:: Example: Detect preposition phrases 
-
-  .. code:: python 
-
-    import spacy
-    from spacy import Language
-    from phrase_detective import PrepPhraseRecognizer, PKG_INDICES
-
-    @Language.factory("pprecog")
-    def create_pp_parser(nlp: Language, name: str):
-      return PrepPhraseRecognizer(nlp) 
-
-    def prep_phrase(lang, sentence):
-      nlp = spacy.load(PKG_INDICES[lang])
-      nlp.add_pipe("pprecog")
-      doc = nlp(sentence)
-      for np in doc._.prep_phrases:
-        print(np.text)
-
 .. topic:: Example: Detect verb phrases 
 
   .. code:: python
@@ -75,7 +56,7 @@ Components for ``spacy`` pipeline, to detect noun phrase, prep phrase, verb rela
 
 """
 
-__version__ = '0.1.28'
+__version__ = '0.1.29'
 
-from .components import NounPhraseRecognizer, PrepPhraseRecognizer, VerbKnowledgeRecognizer
+from .components import NounPhraseRecognizer, VerbKnowledgeRecognizer
 from .constants import PKG_INDICES

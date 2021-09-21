@@ -12,14 +12,6 @@ phrase\_detective.components.noun\_phrases module
    :undoc-members:
    :show-inheritance:
 
-phrase\_detective.components.prep\_phrases module
--------------------------------------------------
-
-.. automodule:: phrase_detective.components.prep_phrases
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 phrase\_detective.components.verb\_knowledge module
 ---------------------------------------------------
 

@@ -1,15 +1,11 @@
 from spacy.language import Language
-from phrase_detective import NounPhraseRecognizer, PrepPhraseRecognizer, VerbKnowledgeRecognizer
+from phrase_detective import NounPhraseRecognizer, VerbKnowledgeRecognizer
 from phrase_detective import PKG_INDICES
 import spacy
 
 @Language.factory("nprecog")
 def create_np_parser(nlp: Language, name: str):
   return NounPhraseRecognizer(nlp) 
-
-@Language.factory("pprecog")
-def create_pp_parser(nlp: Language, name: str):
-  return PrepPhraseRecognizer(nlp) 
 
 @Language.factory("vkbrecog")
 def create_vkb_parser(nlp: Language, name: str):
@@ -44,22 +40,6 @@ def test_nprecog():
   #assert len(nps) == 1
   #assert nps[0] == "der nächste Supermarkt"
 
-
-def test_pprecog():
-  lang = "es"
-
-  sentence = "Es que esto es un dineral para uno solo"
-  sentence = "Qué? Angustiado por la rutina de la vida conyugal, dipuesto a vivir el espejismo"
-  sentence = "Cómo me alegro de que estés otra vez en casa, cariño"
-  nlp = spacy.load(PKG_INDICES[lang])
-  nlp.add_pipe("pprecog")
-  doc = nlp(sentence)
-  pps = []
-  for pp in doc._.prep_phrases:
-    pps.append(pp.text)
-  print(pps)
-  #assert len(pps) == 1
-  #assert pps[0] == "auf dem Tisch"
 
 def test_vkbrecog():
   lang = "de"

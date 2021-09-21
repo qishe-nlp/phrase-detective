@@ -14,17 +14,6 @@ NP = [
   [{"POS": "NOUN"}, {"POS": "PRON","MORPH": {"IS_SUPERSET": ["Poss=Yes"]}}],
 ]
 
-# PP preposition phrase pattern
-PP = [
-  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADJ", "OP": "?", "DEP": "amod"}],
-  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "ADP"}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADJ", "OP": "?", "DEP": "amod"}],
-  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NUM", "OP": "?"}, {"POS": "NOUN"}, {"POS": "ADJ", "OP": "?", "DEP": "amod"}],
-  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": {"IN": ["NOUN", "PRON"]}}, {"POS": "ADJ", "OP": "?", "DEP": "amod"}],
-  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "DET", "OP": "?"}, {"POS": "PROPN"}],
-  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "ADV", "LOWER": {"NOT_IN": ["no"]}}, {"POS": "ADP", "OP": "?"}],
-  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "PRON", "LOWER": {"NOT_IN": ["lo"]}}],
-  [{"POS": "ADP", "LOWER": {"NOT_IN": ["de", "del", "a", "al"]}}, {"POS": "ADJ", "DEP": "amod"}],
-]
 
 # VERB Knowledge pattern
 VERB = [
@@ -41,6 +30,5 @@ VERB_PASSIVE = [
 es_regx = {
   "verb": VERB,
   "verb_passive": VERB_PASSIVE,
-  "pp": PP,
   "np": NP,
 }

@@ -20,23 +20,6 @@ NP = [
   [{"POS": "PROPN", "DEP": "ag"}, {"POS": "NOUN"}],
 ]
 
-# PP preposition phrase pattern
-ADP = [{"POS": "ADP", "LOWER": {"NOT_IN": ["von", "bis"]}}]
-PP = [
-  [{"LOWER": "von"}, {"POS": "NUM"}, {"POS": "NOUN", "OP": "?"}, {"LOWER": "bis"}, {"POS": "NUM"}, {"POS": "NOUN", "OP": "?"}],
-  ADP + [{"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NOUN"}, {"POS": "DET"}, {"POS": "NOUN", "DEP": "ag"}],
-  ADP + [{"POS": "NOUN", "DEP": "nk"}, {"POS": "CCONJ", "DEP": "cd"}, {"POS": "NOUN", "DEP": "cj"}],
-  ADP + [{"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "NUM", "OP": "?"}, {"POS": "NOUN"}],
-  ADP + [{"POS": "DET", "OP": "?"}, {"POS": "ADJ", "OP": "?"}, {"POS": "PROPN"}],
-  ADP + [{"POS": "ADP"}, {"POS": "DET"}, {"POS": "NOUN"}],
-  ADP + [{"POS": "NOUN", "DEP": "ag"}, {"POS": "NOUN"}],
-  ADP + [{"POS": "PROPN", "DEP": "ag"}, {"POS": "NOUN"}],
-  ADP + [{"POS": "ADV"}],
-  ADP + [{"POS": "NOUN"}],
-  ADP + [{"POS": "PROPN", "OP": "+"}],
-  ADP + [{"POS": "PRON"}],
-  ADP + [{"TAG": "NN"}],
-]
 
 # TODO: VERB Knowledge pattern
 VERB = [
@@ -56,6 +39,5 @@ VERB_PASSIVE = [
 de_regx = {
   "verb": VERB,
   "verb_passive": VERB_PASSIVE,
-  "pp": PP,
   "np": NP,
 }

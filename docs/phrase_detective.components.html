@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>phrase_detective.components package &mdash; phrase-detective 0.1.15 documentation</title>
+  <title>phrase_detective.components package &mdash; phrase-detective 0.1.29 documentation</title>
   
 
   
@@ -210,38 +210,6 @@
 </dd></dl>
 
 </div>
-<div class="section" id="module-phrase_detective.components.prep_phrases">
-<span id="phrase-detective-components-prep-phrases-module"></span><h2>phrase_detective.components.prep_phrases module<a class="headerlink" href="#module-phrase_detective.components.prep_phrases" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="phrase_detective.components.prep_phrases.PrepPhraseRecognizer">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">phrase_detective.components.prep_phrases.</span></code><code class="sig-name descname"><span class="pre">PrepPhraseRecognizer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nlp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#phrase_detective.components.prep_phrases.PrepPhraseRecognizer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Customerized component to detect noun phrases in <code class="docutils literal notranslate"><span class="pre">spacy.tokens.Doc</span></code> object. The <code class="docutils literal notranslate"><span class="pre">PP</span></code> values are stored in <code class="docutils literal notranslate"><span class="pre">doc._.prep_phrases</span></code>.</p>
-<dl class="py attribute">
-<dt id="phrase_detective.components.prep_phrases.PrepPhraseRecognizer.ext_name">
-<code class="sig-name descname"><span class="pre">ext_name</span></code><a class="headerlink" href="#phrase_detective.components.prep_phrases.PrepPhraseRecognizer.ext_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>customized extension field name</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="phrase_detective.components.prep_phrases.PrepPhraseRecognizer.matcher">
-<code class="sig-name descname"><span class="pre">matcher</span></code><a class="headerlink" href="#phrase_detective.components.prep_phrases.PrepPhraseRecognizer.matcher" title="Permalink to this definition">¶</a></dt>
-<dd><p>Rule maker for detecting <code class="docutils literal notranslate"><span class="pre">PP</span></code></p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>spacy.mathcer.Matcher</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
 <div class="section" id="module-phrase_detective.components.verb_knowledge">
 <span id="phrase-detective-components-verb-knowledge-module"></span><h2>phrase_detective.components.verb_knowledge module<a class="headerlink" href="#module-phrase_detective.components.verb_knowledge" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
@@ -276,7 +244,7 @@
 </div>
 <div class="section" id="module-phrase_detective.components">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-phrase_detective.components" title="Permalink to this headline">¶</a></h2>
-<p>This module <code class="docutils literal notranslate"><span class="pre">phrase_detective.components</span></code> implements <code class="docutils literal notranslate"><span class="pre">spacy</span></code> component for detecting noun phrase, prep phrase and verb phrase.</p>
+<p>This module <code class="docutils literal notranslate"><span class="pre">phrase_detective.components</span></code> implements <code class="docutils literal notranslate"><span class="pre">spacy</span></code> component for detecting noun phrase and verb phrase.</p>
 </div>
 </div>
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>phrase_detective package &mdash; phrase-detective 0.1.15 documentation</title>
+  <title>phrase_detective package &mdash; phrase-detective 0.1.29 documentation</title>
   
 
   
@@ -180,7 +180,6 @@
 <li class="toctree-l1"><a class="reference internal" href="phrase_detective.components.html">phrase_detective.components package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.components.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.components.html#module-phrase_detective.components.noun_phrases">phrase_detective.components.noun_phrases module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="phrase_detective.components.html#module-phrase_detective.components.prep_phrases">phrase_detective.components.prep_phrases module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.components.html#module-phrase_detective.components.verb_knowledge">phrase_detective.components.verb_knowledge module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.components.html#module-phrase_detective.components">Module contents</a></li>
 </ul>
@@ -308,25 +307,6 @@ $ python -m spacy download de_dep_news_trf
   <span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;nprecog&quot;</span><span class="p">)</span>
   <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
   <span class="k">for</span> <span class="n">np</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">_</span><span class="o">.</span><span class="n">noun_phrases</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="topic">
-<p class="topic-title">Example: Detect preposition phrases</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
-<span class="kn">from</span> <span class="nn">spacy</span> <span class="kn">import</span> <span class="n">Language</span>
-<span class="kn">from</span> <span class="nn">phrase_detective</span> <span class="kn">import</span> <span class="n">PrepPhraseRecognizer</span><span class="p">,</span> <span class="n">PKG_INDICES</span>
-
-<span class="nd">@Language</span><span class="o">.</span><span class="n">factory</span><span class="p">(</span><span class="s2">&quot;pprecog&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">create_pp_parser</span><span class="p">(</span><span class="n">nlp</span><span class="p">:</span> <span class="n">Language</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-  <span class="k">return</span> <span class="n">PrepPhraseRecognizer</span><span class="p">(</span><span class="n">nlp</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">prep_phrase</span><span class="p">(</span><span class="n">lang</span><span class="p">,</span> <span class="n">sentence</span><span class="p">):</span>
-  <span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">PKG_INDICES</span><span class="p">[</span><span class="n">lang</span><span class="p">])</span>
-  <span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="s2">&quot;pprecog&quot;</span><span class="p">)</span>
-  <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
-  <span class="k">for</span> <span class="n">np</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">_</span><span class="o">.</span><span class="n">prep_phrases</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
