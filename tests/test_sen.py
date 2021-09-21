@@ -18,5 +18,5 @@ def test_sens():
       print("{}: {} {} {} {}".format(t.text, t.pos_, t.morph, t.tag_, t.dep_))
     print()
     docs.append(doc)
-  spacy.displacy.serve(docs, style="dep")
+  #spacy.displacy.serve(docs, style="dep")
 
