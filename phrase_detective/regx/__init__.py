@@ -7,12 +7,12 @@
   print(REGX)
 """
 
-from .en import en_regx
-from .es import es_regx
-from .de import de_regx
+from .en import EN_VERB 
+from .es import ES_VERB
+from .de import DE_VERB
 
 REGX = {
-  "en": en_regx,
-  "es": es_regx,
-  "de": de_regx,
+  "en": EN_VERB,
+  "es": ES_VERB,
+  "de": DE_VERB,
 }
