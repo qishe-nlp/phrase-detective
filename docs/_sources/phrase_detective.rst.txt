@@ -7,9 +7,7 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   phrase_detective.components
    phrase_detective.regx
-   phrase_detective.rules
 
 Submodules
 ----------
@@ -26,6 +24,22 @@ phrase\_detective.lib module
 ----------------------------
 
 .. automodule:: phrase_detective.lib
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+phrase\_detective.noun\_phrases module
+--------------------------------------
+
+.. automodule:: phrase_detective.noun_phrases
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+phrase\_detective.verb\_knowledge module
+----------------------------------------
+
+.. automodule:: phrase_detective.verb_knowledge
    :members:
    :undoc-members:
    :show-inheritance:

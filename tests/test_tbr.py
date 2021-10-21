@@ -27,7 +27,7 @@ def test_np():
 
 
 def test_tbr_gen():
-  sentences = read_json('./de_S01E06.json')
+  sentences = read_json('./de_2.json')
   #sentences = tbr_sentences 
 
   print(sentences)

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>phrase_detective package &mdash; phrase-detective 0.1.30 documentation</title>
+  <title>phrase_detective package &mdash; phrase-detective 0.1.31 documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="phrase_detective.components package" href="phrase_detective.components.html" />
+    <link rel="next" title="phrase_detective.regx package" href="phrase_detective.regx.html" />
     <link rel="prev" title="phrase_detective" href="modules.html" /> 
 </head>
 
@@ -89,14 +89,14 @@
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">phrase_detective</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">phrase_detective package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="phrase_detective.components.html">phrase_detective.components package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="phrase_detective.regx.html">phrase_detective.regx package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="phrase_detective.rules.html">phrase_detective.rules package</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-phrase_detective.constants">phrase_detective.constants module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-phrase_detective.lib">phrase_detective.lib module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-phrase_detective.noun_phrases">phrase_detective.noun_phrases module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-phrase_detective.verb_knowledge">phrase_detective.verb_knowledge module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-phrase_detective">Module contents</a></li>
 </ul>
 </li>
@@ -177,27 +177,12 @@
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="phrase_detective.components.html">phrase_detective.components package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="phrase_detective.components.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="phrase_detective.components.html#module-phrase_detective.components.noun_phrases">phrase_detective.components.noun_phrases module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="phrase_detective.components.html#module-phrase_detective.components.verb_knowledge">phrase_detective.components.verb_knowledge module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="phrase_detective.components.html#module-phrase_detective.components">Module contents</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="phrase_detective.regx.html">phrase_detective.regx package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.regx.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.regx.html#module-phrase_detective.regx.de">phrase_detective.regx.de module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.regx.html#module-phrase_detective.regx.en">phrase_detective.regx.en module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.regx.html#module-phrase_detective.regx.es">phrase_detective.regx.es module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phrase_detective.regx.html#module-phrase_detective.regx">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="phrase_detective.rules.html">phrase_detective.rules package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="phrase_detective.rules.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="phrase_detective.rules.html#module-phrase_detective.rules.de">phrase_detective.rules.de module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="phrase_detective.rules.html#module-phrase_detective.rules.en">phrase_detective.rules.en module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="phrase_detective.rules.html#module-phrase_detective.rules.es">phrase_detective.rules.es module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="phrase_detective.rules.html#module-phrase_detective.rules">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -279,6 +264,59 @@
 </dd></dl>
 
 </div>
+<div class="section" id="module-phrase_detective.noun_phrases">
+<span id="phrase-detective-noun-phrases-module"></span><h2>phrase_detective.noun_phrases module<a class="headerlink" href="#module-phrase_detective.noun_phrases" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="phrase_detective.noun_phrases.NounPhraseRecognizer">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">phrase_detective.noun_phrases.</span></code><code class="sig-name descname"><span class="pre">NounPhraseRecognizer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nlp</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">spacy.language.Language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#phrase_detective.noun_phrases.NounPhraseRecognizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Customerized component to detect noun phrases in <code class="docutils literal notranslate"><span class="pre">spacy.tokens.Doc</span></code> object. The <code class="docutils literal notranslate"><span class="pre">NP</span></code> values are stored in <code class="docutils literal notranslate"><span class="pre">doc._.noun_phrases</span></code>,</p>
+<dl class="py attribute">
+<dt id="phrase_detective.noun_phrases.NounPhraseRecognizer.ext_name">
+<code class="sig-name descname"><span class="pre">ext_name</span></code><a class="headerlink" href="#phrase_detective.noun_phrases.NounPhraseRecognizer.ext_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>customized extension field name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-phrase_detective.verb_knowledge">
+<span id="phrase-detective-verb-knowledge-module"></span><h2>phrase_detective.verb_knowledge module<a class="headerlink" href="#module-phrase_detective.verb_knowledge" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="phrase_detective.verb_knowledge.VerbKnowledgeRecognizer">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">phrase_detective.verb_knowledge.</span></code><code class="sig-name descname"><span class="pre">VerbKnowledgeRecognizer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nlp</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">spacy.language.Language</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#phrase_detective.verb_knowledge.VerbKnowledgeRecognizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Customerized component to detect verb knowledge in <code class="docutils literal notranslate"><span class="pre">spacy.tokens.Doc</span></code> object. The corresponding values are stored in <code class="docutils literal notranslate"><span class="pre">doc._.verbs</span></code>.</p>
+<dl class="py attribute">
+<dt id="phrase_detective.verb_knowledge.VerbKnowledgeRecognizer.ext_name">
+<code class="sig-name descname"><span class="pre">ext_name</span></code><a class="headerlink" href="#phrase_detective.verb_knowledge.VerbKnowledgeRecognizer.ext_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>customized extension field name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="phrase_detective.verb_knowledge.VerbKnowledgeRecognizer.matcher">
+<code class="sig-name descname"><span class="pre">matcher</span></code><a class="headerlink" href="#phrase_detective.verb_knowledge.VerbKnowledgeRecognizer.matcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rule maker for detecting <code class="docutils literal notranslate"><span class="pre">VERB</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>spacy.mathcer.Matcher</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="module-phrase_detective">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-phrase_detective" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">phrase_detective</span></code> Package</p>
@@ -327,10 +365,6 @@ $ python -m spacy download de_dep_news_trf
   <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
   <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">_</span><span class="o">.</span><span class="n">verbs</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TEXT: </span><span class="si">{}</span><span class="s2">, TAG: </span><span class="si">{}</span><span class="s2">, FORM: </span><span class="si">{}</span><span class="s2">, ORIGNAL: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">tag_</span><span class="p">,</span> <span class="n">spacy</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">tag_</span><span class="p">),</span> <span class="n">v</span><span class="o">.</span><span class="n">lemma_</span><span class="p">))</span>
-  <span class="k">for</span> <span class="n">pp</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">_</span><span class="o">.</span><span class="n">passive_phrases</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-  <span class="k">for</span> <span class="n">vp</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">_</span><span class="o">.</span><span class="n">verb_phrases</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">vp</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -343,7 +377,7 @@ $ python -m spacy download de_dep_news_trf
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="phrase_detective.components.html" class="btn btn-neutral float-right" title="phrase_detective.components package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="phrase_detective.regx.html" class="btn btn-neutral float-right" title="phrase_detective.regx package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="modules.html" class="btn btn-neutral float-left" title="phrase_detective" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

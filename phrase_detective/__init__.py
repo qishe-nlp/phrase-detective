@@ -49,14 +49,10 @@ Components for ``spacy`` pipeline, to detect noun phrase, prep phrase, verb rela
       doc = nlp(sentence)
       for v in doc._.verbs:
         print("TEXT: {}, TAG: {}, FORM: {}, ORIGNAL: {}".format(v.text, v.tag_, spacy.explain(v.tag_), v.lemma_))
-      for pp in doc._.passive_phrases:
-        print(pp.text)
-      for vp in doc._.verb_phrases:
-        print(vp)
 
 """
 
-__version__ = '0.1.30'
+__version__ = '0.1.31'
 
 from .noun_phrases import NounPhraseRecognizer
 from .verb_knowledge import VerbKnowledgeRecognizer

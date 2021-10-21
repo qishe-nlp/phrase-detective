@@ -5,11 +5,11 @@ from spacy.language import Language
 from phrase_detective.regx import REGX 
 
 class VerbKnowledgeRecognizer:
-  """Customerized component to detect verb knowledge in ``spacy.tokens.Doc`` object. The corresponding values are stored in ``doc._.verbs``, ``doc._.passive_phrases``, and ``doc._.verb_phrases``.
+  """Customerized component to detect verb knowledge in ``spacy.tokens.Doc`` object. The corresponding values are stored in ``doc._.verbs``.
 
   Attributes:
     ext_name (str): customized extension field name
-    matcher (spacy.mathcer.Matcher): Rule maker for detecting ``VERB`` and ``PASSIVE``
+    matcher (spacy.mathcer.Matcher): Rule maker for detecting ``VERB``
   """
 
   def __init__(self, nlp: Language):

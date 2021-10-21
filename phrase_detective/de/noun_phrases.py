@@ -95,7 +95,6 @@ def search_out(doc, nlp):
   matches = token_refined_matches + dep_refined_matches
   refined_matches = merge(matches)
 
-  print(refined_matches)
   for start, end in refined_matches:
     if end-start > 1 and all([e.pos_!="PUNCT" for e in doc[start:end]]):
       np = doc[start: end]
