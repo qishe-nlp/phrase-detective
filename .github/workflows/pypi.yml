@@ -19,7 +19,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Build and publish to test pypi
-        uses: JRubics/poetry-publish@v1.5
+      - name: Build and publish to pypi
+        uses: JRubics/poetry-publish@v1.16
         with:
           pypi_token: ${{ secrets.PYPI_TOKEN }}
