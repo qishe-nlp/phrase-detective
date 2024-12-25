@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "phrase-detective"
-version = "0.1.33"
+version = "0.1.34"
 description = "Phrase recognizer component for spacy pipeline"
 authors = ["Phoenix Grey <phoenix.grey0108@gmail.com>"]
 documentation = "https://qishe-nlp.github.io/phrase-detective/"
@@ -9,13 +9,13 @@ keywords = ["phrase detection", "NLP", "spacy"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8"
-spacy = "^3.5.0"
+python = "^3.12"
+spacy = "3.7.5"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
-Sphinx = "^6.1.3"
-sphinx-rtd-theme = "^1.2.0"
+pytest = "^8.1"
+Sphinx = "^8.1.3"
+sphinx-rtd-theme = "^3.0.2"
 sphinxcontrib-jquery = "^4.1"
 
 [build-system]
